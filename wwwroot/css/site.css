@@ -1,0 +1,576 @@
+/* Fuentes */
+@import url('https://fonts.cdnfonts.com/css/coolvetica');
+@import url('https://fonts.cdnfonts.com/css/creato-display');
+
+/* Banner */
+.banner-eldertech {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(90deg, #08345B 0%, #008D36 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.35);
+    border-bottom: 1px solid rgba(0,0,0,0.35);
+}
+
+/* Texto ElderTech */
+.banner-title {
+    font-family: 'Coolvetica', sans-serif;
+    font-style: italic;
+    font-size: 95px;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+/* “Elder” y “Tech” con colores separados */
+.banner-elder {
+    color: #008D36;
+}
+.banner-tech {
+    color: #1A3153;
+}
+
+/* Subtítulo */
+.banner-sub {
+    font-family: 'Creato Display', sans-serif;
+    font-size: 26px;
+    color: #3CAA36;
+    margin-top: 6px;
+}
+
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.banner h1 {
+  font-size: 45px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.banner p {
+  font-size: 20px;
+  font-style: italic;
+  color: #e6e6e6;
+}
+
+/* Titulos de secciones */
+.titulo-seccion {
+  font-family: 'Coolvetica', sans-serif;
+  font-style: italic;
+  font-size: 35px;
+  color: #1A3153;
+  margin-bottom: 15px;
+}
+
+/* Artículos */
+.articulos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.articulo {
+  display: flex;
+  align-items: stretch;
+  background-color: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 15px;
+  width: 31%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  
+}
+
+.articulo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+}
+
+.articulo-img {
+  width: 40%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  object-fit: cover;
+}
+
+.articulo-info {
+  padding: 10px 15px;
+  width: 60%;
+  
+}
+
+.articulo-info h3 {
+  font-size: 1.25rem;
+  color: #133A60;
+  margin-bottom: 5px;
+  font-family: 'Coolvetica', sans-serif;
+}
+
+.articulo-info p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: 'Creato Display', sans-serif;
+}
+
+.info-extra {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #000;
+  border-top: 1px solid #ccc;
+  padding-top: 4px;
+}
+.banner{
+
+  margin: 0;
+  border: 1px solid black;
+}
+.banner img{
+width: 100%;
+  margin: 0;
+  border: 1px solid black;
+}
+
+/* Estructura general */
+nav {
+  width: min(1200px, 96%);
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* Logo + buscador juntos */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* Buscador con lupa */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.search-form input[type="search"] {
+  width: 240px;
+  height: 40px;
+  border: 1px solid #d9dee7;
+  border-radius: 999px 0 0 999px;
+  padding: 0 .9rem;
+  font-size: .95rem;
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+.search-btn {
+  height: 40px;
+  padding: 0 1rem;
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 0 999px 999px 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Botones de navegación */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links li a {
+  display: inline-block;
+  text-decoration: none;
+  background: #1A3153;
+  color: #fff;
+  padding: .55rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Hover mejorado */
+.nav-links li a:hover {
+  background-color: #0e2f53;
+  transform: scale(1.05);
+}
+
+/* Botones de sesión sin fondo */
+.nav-links li a.btn-login,
+.nav-links li a.btn-register {
+  background: transparent;
+  color: #1A3153;
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  font-weight: 700;
+  border: 0;
+}
+
+.nav-links li a.btn-login:hover,
+.nav-links li a.btn-register:hover {
+  text-decoration: underline;
+  background-color: #f0f0f0;
+}
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+  background-size: 100% 100%;
+}
+
+.carousel .articulo {
+  width: 45%;
+  min-width: 300px;
+}
+
+.nav-links li {
+  white-space: nowrap;
+}
+
+/* Global */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #0e1b2b;
+  background: #f3f5f8;
+}
+img { display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+
+/* Contenedor principal (layout de la tarjeta grande) */
+.contenedor {
+  width: min(1200px, 96%);
+  min-height: 820px;
+  height: auto;
+  margin: 2% auto;
+  background: #ffffff;
+  border: 1px solid #d9dee7;
+  border-radius: 8px;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 36% 64%;
+}
+
+
+
+/* Panel izquierdo */
+.contenedor div:nth-child(1) {
+  position: relative;
+  background: #0b2f57;
+  display: flex;
+  align-items: flex-end;
+  padding: 10%;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+.contenedor div:nth-child(1) {
+  position: relative;
+  background: #0b2f57; /* color backup */
+  display: flex;
+  align-items: flex-end;
+  padding: 10%;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+
+.contenedor div:nth-child(1) .fondoIzquierda {
+  position: absolute;
+  inset: 0;
+  background: url("/Imagenes/FondoIzquierdo.png") center/cover no-repeat; /* <--- RUTA CORREGIDA */
+  opacity: .9;
+  z-index: 1;
+}
+
+
+/* Panel derecho */
+.contenedor div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 2rem 2.5rem;
+  gap: 1.25rem;
+  min-height: auto;
+
+}
+
+.avatar,
+.avatarRegistrarse{
+  width: 140px;
+  height: 140px;
+  background-color: #d9dde4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.75rem;
+  overflow: hidden;
+}
+
+.avatar img,
+.avatarRegistrarse img{
+  max-width: 60%;      /* <-- achica el ícono */
+  max-height: 60%;     /* <-- mantiene proporción */
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+  margin-left: 20%;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+
+
+
+/* Titles and form */
+/* H1 aligned left per request */
+h1 {
+  text-align: center;
+  color: #0b3a6f;
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+form {
+  width: min(92%, 560px);
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+label {
+  font-weight: 600;
+  font-size: .95rem;
+  color: #1e2a3a;
+}
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #d9dee7;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: .8rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #7aa6d9;
+  box-shadow: 0 0 0 3px rgba(122,166,217,.25);
+}
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: .9rem 1.25rem;
+  background: #1fa36c;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  width: max(12rem, 48%);
+  margin: 0.5rem auto 0;
+  display: block;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(31,163,108,.28);
+  transition: transform .15s ease, filter .15s ease;
+}
+button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+
+/* Login helper */
+.login {
+  text-align: center;
+  margin: .75rem 0 0;
+}
+.login a {
+  color: #0b3a6f;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login a:hover {
+  text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+  margin: 1.5rem 0 2rem;
+  color: #5b6e86;
+}
+footer div {
+  width: min(92%, 1200px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+
+/* ====== Styles for Iniciar Sesion component (standalone, non-nested) ====== */
+.formIniciarSesion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.formIniciarSesion form {
+  width: 100%;
+  max-width: 720px;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+.formIniciarSesion input {
+  width: 100%;
+  height: 64px;
+  padding: 1rem 1.25rem;
+  font-size: 1.05rem;
+  border-radius: 12px;
+  border: 1px solid #d9dee7;
+  background: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+}
+.formIniciarSesion input.pill {
+  border-radius: 999px;
+}
+.formIniciarSesion label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #1e2a3a;
+}
+.formIniciarSesion button {
+  width: 320px;
+  max-width: 100%;
+  height: 56px;
+  margin: 0.25rem auto 0;
+  border-radius: 999px;
+  background: #1fa36c;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(31,163,108,0.28);
+}
+.formIniciarSesion input:focus {
+  border-color: #7aa6d9;
+  box-shadow: 0 0 0 6px rgba(122,166,217,0.10);
+}
+
+/* From Uiverse.io by Yaya12085 */ 
+.google {
+  max-width: 320px;
+  display: flex;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  gap: 0.75rem;
+  color: rgb(65, 63, 63);
+  background-color: #fff;
+  cursor: pointer;
+  transition: all .6s ease;
+}
+
+.google svg {
+  height: 24px;
+}
+
+.google:hover {
+  transform: scale(1.02);
+}
+.banner-blanco{
+  color: white;
+}
+/* PAGINACIÓN */
+.paginacion {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  gap: 10px;
+}
+
+.paginacion a {
+  display: inline-block;
+  background-color: #1A3153;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.paginacion a:hover {
+  background-color: #0e2f53;
+  transform: scale(1.05);
+}
+
+.paginacion a.actual {
+  background-color: #008D36;
+}
+/* Flecha de siguiente página */
+.paginacion a.flecha {
+  background-color: #3CAA36;
+  font-size: 1.2rem;
+  padding: 10px 16px;
+}
+
+.paginacion a.flecha:hover {
+  background-color: #008D36;
+  transform: translateX(3px);
+}
+
+
+
+
+
+
+

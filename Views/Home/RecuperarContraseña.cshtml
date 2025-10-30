@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>ElderTech · Registrarse</title>
+   
+  </head>
+ 
+ 
+  <body>
+ 
+ 
+    <section class="contenedor">
+      <div>
+          <section class = "fondoIzquierda">
+              <a href="img/FondoIzquierdo.png" alt="Imagen fondo izquierda"></a>
+          </section>
+      </div>
+ 
+ 
+   
+      <div>
+          <section class = "avatar">
+              <figure>
+                    <img src="/Imagenes/Avatar.png" alt="Avatar de usuario (referencia)" />
+              </figure>
+          </section>
+       
+        <h1>Recuperar Contraseña</h1>
+ 
+          <section class = "formIniciarSesion">
+            <form action="mail.html" method="get" autocomplete="on" novalidate>
+                <label for="nombre">Usuario</label>
+                <input id="nombre" name="nombre" type="text" required>
+       
+                <button type="submit"><a href='@Url.Action("Mail", "Home")'>Enviar</button>
+              </form>
+          </section>
+       
+ 
+          <section class="login">
+          <p>
+              <a href='@Url.Action("IniciarSesion", "Home")'>Ya tengo un usuario (iniciar sesión)</a>
+          </p>
+        </section >
+       
+      </div>
+    </section>
+ 
+ 
+    <footer>
+      <div>
+        <small>© ElderTech</small>
+        <small>Ayuda: ElderTech6@gmail.com</small>
+      </div>
+    </footer>
+  </body>
+  </html>
+ 
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 272.4 223.82">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_15-2);
+      }
+
+      .cls-4, .cls-5 {
+        fill: #3caa36;
+      }
+
+      .cls-5, .cls-6 {
+        font-family: Coolvetica-Italic, Coolvetica;
+        font-size: 63.57px;
+        font-style: italic;
+      }
+
+      .cls-6 {
+        fill: #1b3253;
+      }
+
+      .cls-7 {
+        fill: #3aaa35;
+        font-family: CreatoDisplay-Light, 'CreatoDisplay Light';
+        font-size: 18px;
+        font-weight: 300;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        fill: url(#Degradado_sin_nombre_15);
+      }
+
+      .cls-10 {
+        fill: #123a5f;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_15" data-name="Degradado sin nombre 15" x1="86.92" y1="15.61" x2="185.53" y2="15.61" gradientUnits="userSpaceOnUse">
+      <stop offset=".17" stop-color="#3caa36"/>
+      <stop offset="1" stop-color="#123a5f"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_15-2" data-name="Degradado sin nombre 15" y1="84.74" y2="84.74" xlink:href="#Degradado_sin_nombre_15"/>
+  </defs>
+  <g id="Capa_1-2" data-name="Capa 1">
+    <g>
+      <path class="cls-10" d="M136.23,0v13.31c0,3.25,2.48,5.97,5.72,6.24,9.05.78,26.99,3.08,40.06,9.56,2.15,1.07,3.52,3.24,3.52,5.64v33.58c0,3.46-2.81,6.27-6.27,6.27h-36.77c-3.46,0-6.27,2.81-6.27,6.27v7.34c0,3.44,2.77,6.24,6.21,6.27l53.53.47s33.44-.6,45.4,27.16c.98,2.28,3.25,3.75,5.73,3.75h23.47s-.37,1.17.5.11,1.33-2.46,1.33-3.86v-45.03s-11.68-2.22-14.94-2.08l4.38-.05c-2.47.03-4.71-1.39-5.75-3.63C249.14,56.39,217.91,1.02,136.23,0Z"/>
+      <path class="cls-4" d="M136.23,0v19.17s-31.43,1.04-49.3,11.87v43.57h49.3v19.83l-59.74.52s-36.39-.65-46.83,30.91H1.88s.65,2.09-1.83-1.83v-46.96s-.65-2.35,2.61-2.22l12.13.13S41.79,1.17,136.23,0Z"/>
+      <path class="cls-9" d="M86.92,31.04s43.76-26.4,98.61,0V8.4s-43.63-18.52-98.61,0v22.65Z"/>
+      <rect class="cls-3" x="86.92" y="74.61" width="98.61" height="20.26"/>
+    </g>
+    <g>
+      <text class="cls-5" transform="translate(6.42 175.4)"><tspan x="0" y="0">Elder</tspan></text>
+      <text class="cls-6" transform="translate(142.65 176.22)"><tspan class="cls-2" x="0" y="0">T</tspan><tspan x="28.61" y="0">ech</tspan></text>
+    </g>
+    <text class="cls-7" transform="translate(47.93 200.18)"><tspan x="0" y="0">El pue</tspan><tspan class="cls-1" x="46.1" y="0">n</tspan><tspan class="cls-11" x="56.01" y="0">t</tspan><tspan x="61.87" y="0">e que ne</tspan><tspan class="cls-8" x="126.59" y="0">c</tspan><tspan x="134.55" y="0">esitas</tspan></text>
+  </g>
+</svg>

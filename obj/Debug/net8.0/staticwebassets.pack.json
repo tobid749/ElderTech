@@ -1,0 +1,133 @@
+{
+  "Files": [
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\AppStore.jfif",
+      "PackagePath": "staticwebassets\\Imagenes\\AppStore.jfif"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\ArchivoBorrado.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\ArchivoBorrado.jpg"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Avatar.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Avatar.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Banner.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Banner.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Bateria.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Bateria.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Chatgpt.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Chatgpt.jpg"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Chrome.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Chrome.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Contrasena.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Contrasena.jpg"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\FondoIzquierdo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\FondoIzquierdo.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Gmail.jpeg",
+      "PackagePath": "staticwebassets\\Imagenes\\Gmail.jpeg"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Iphone17.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Iphone17.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Lluvia.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Lluvia.jpg"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\Imagenes\\Logo.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Logo.png"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "Z:\\..Eldertech\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Eldertech.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Eldertech.props",
+      "PackagePath": "build\\Eldertech.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Eldertech.props",
+      "PackagePath": "buildMultiTargeting\\Eldertech.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Eldertech.props",
+      "PackagePath": "buildTransitive\\Eldertech.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
