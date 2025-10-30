@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.data.sqlclient" Version="6.1.2" />
+  </ItemGroup>
+
 </Project>

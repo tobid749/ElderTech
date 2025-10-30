@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Crear Artículo";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Artículo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/estilos.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' class="brand">
+        <img src="/Imagenes/Logo.png" class="logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+      <li><a href='@Url.Action("IndexSesionado", "Home")'>Inicio</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<main class="container mt-5 crear-articulo">
+
+    <h2 class="mb-4 text-center titulo-seccion">Crear nuevo artículo</h2>
+
+    <form asp-action="CrearArticulo" asp-controller="Articulos" method="post" enctype="multipart/form-data" class="form-crear-articulo">
+
+        <label for="Titulo">Título del Artículo</label>
+        <input type="text" id="Titulo" name="Titulo" required>
+
+        <label for="Descripcion">Descripción / Contenido</label>
+        <textarea id="Descripcion" name="Descripcion" rows="6" required></textarea>
+
+        <label for="Video">Subir imagen o video</label>
+        <input type="file" id="Video" name="Video" accept="image/*,video/*">
+
+        <label for="Autor">Autor</label>
+        <input type="text" id="Autor" name="Autor" value="UsuarioSesión" required>
+
+        <input type="hidden" name="Fecha" value="@DateTime.Now.ToString("dd/MM/yyyy")" />
+
+        <button type="submit">Guardar Artículo</button>
+
+    </form>
+
+</main>
+
+</body>
+</html>

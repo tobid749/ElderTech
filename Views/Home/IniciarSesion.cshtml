@@ -27,17 +27,16 @@
         <h1>Iniciar Sesión</h1>
  
           <section class = "formIniciarSesion">
-            <form action="index.html" method="get" autocomplete="on" novalidate>
-                <label for="nombre">Usuario</label>
-                <input id="nombre" name="nombre" type="text" required>
-       
-       
-                <label for="password">Contraseña</label>
-                <input id="password" name="password" type="password" required>
-       
-       
-                <button type="submit"> <a href='@Url.Action("IndexSesionado", "Home")' >Ingresar</button>
-              </form>
+            <form asp-action="IniciarSesion" asp-controller="Auth" method="post" class="formIniciarSesion">
+    <label>Usuario</label>
+    <input type="text" name="Usuario" required>
+
+    <label>Contraseña</label>
+    <input type="password" name="Password" required>
+
+    <button type="submit">Ingresar</button>
+</form>
+
           </section>
 
          

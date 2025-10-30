@@ -31,33 +31,22 @@
 
 
 
-      <form action="index.html" method="get" autocomplete="on" novalidate>
-        <label for="Nombre">Usuario</label>
-        <input id="nombre" name="nombre" type="text" required>
+      <form asp-action="Registrarse" asp-controller="Auth" method="post">
+    <label>Usuario</label>
+    <input type="text" name="UsuarioNombre" required>
 
+    <label>Mail</label>
+    <input type="email" name="Mail" required>
 
+    <label>Contraseña</label>
+    <input type="password" name="Password" required>
 
+    <label>Fecha de nacimiento</label>
+    <input type="date" name="FechaNacimiento" required>
 
-        <label for="Password">Contraseña</label>
-        <input id="password" name="password" type="password" required>
+    <button type="submit">Crear cuenta</button>
+</form>
 
-
-
-
-        <label for="gmail">Gmail</label>
-        <input id="gmail" name="pais" type="email" required>
-
-
-
-
-        <label for="FechaNacimiento">Fecha de nacimiento</label>
-        <input id="fecha" name="fecha" type="date" required>
-
-
-
-
-        <button type="submit"><a href='@Url.Action("IndexSesionado", "Home")' >Crear cuenta</button>
-      </form>
 
       <button class="google">
   <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
