@@ -18,6 +18,30 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = Z:\..Eldertech
 build_property._RazorSourceGeneratorDebug = 
 
+[Z:/..Eldertech/Views/Articulos/CrearArticulo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXENyZWFyQXJ0aWN1bG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/..Eldertech/Views/Articulos/Detalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXERldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/..Eldertech/Views/Articulos/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/..Eldertech/Views/Articulos/Lista.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXExpc3RhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/..Eldertech/Views/Auth/IniciarSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmljaWFyU2VzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/..Eldertech/Views/Auth/Registrarse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3RyYXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/..Eldertech/Views/Home/Articulos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,10 +56,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [Z:/..Eldertech/Views/Home/Articulos4.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsb3M0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[Z:/..Eldertech/Views/Home/CrearArticulo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhckFydGljdWxvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/..Eldertech/Views/Home/Index.cshtml]
@@ -56,10 +76,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [Z:/..Eldertech/Views/Home/RecuperarContraseña.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWN1cGVyYXJDb250cmFzZcOxYS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[Z:/..Eldertech/Views/Home/Registrarse.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3RyYXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/..Eldertech/Views/Shared/_Layout.cshtml]

@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <title>ElderTech · Iniciar Sesión</title>
+</head>
+
+<body>
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red; text-align:center; font-weight:600; margin-top:15px;">
+        @ViewBag.Error
+    </div>
+}
+
+<section class="contenedor">
+    <div>
+        <section class="fondoIzquierda"></section>
+    </div>
+
+    <div>
+        <section class="avatar">
+            <img src="/Imagenes/Avatar.png" alt="Avatar" />
+        </section>
+
+        <h1>Iniciar Sesión</h1>
+
+        <section class="formIniciarSesion">
+            <form asp-action="IniciarSesion" asp-controller="Auth" method="post">
+                <label>Usuario</label>
+                <input type="text" name="NombreUsuario" required>
+
+                <label>Contraseña</label>
+                <input type="password" name="Password" required>
+
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
+
+        <button class="google">
+            <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
+                <path fill="#4285F4" d="M255.878 133.451..."></path>
+            </svg>
+            continuar con Google
+        </button>
+
+        <section class="login">
+            <p>
+                <a href='@Url.Action("Registrarse", "Auth")'>No tengo usuario</a> |
+                <a href='@Url.Action("RecuperarContraseña", "Auth")'>Olvidé mi contraseña</a>
+            </p>
+        </section>
+
+    </div>
+</section>
+
+<footer>
+    <div>
+        <small>© ElderTech</small>
+        <small>Ayuda: ElderTech6@gmail.com</small>
+    </div>
+</footer>
+
+</body>
+</html>

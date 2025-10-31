@@ -1,33 +1,40 @@
-using Microsoft.Data.SqlClient;
-using Dapper;
+using Microsoft.AspNetCore.Mvc;
+using Eldertech.Models;
 
-namespace Eldertech.Models
+namespace Eldertech.Controllers
 {
-    public static class BD
+    public class AuthController : Controller
     {
-        private static string _connectionString = 
-            @"server=localhost;DataBase=ElderTechSQL;Integrated Security=true;TrustServerCertificate=True;";
-
-        public static SqlConnection ObtenerConexion()
+        [HttpPost]
+        public IActionResult IniciarSesion(string Usuario, string Password)
         {
-            return new SqlConnection(_connectionString);
+            var user = BD.IniciarSesion(Usuario, Password);
+
+            if (user != null)
+            {
+                // Sesión para autor
+                HttpContext.Session.SetString("UsuarioNombre", user.NombreUsuario);
+                return RedirectToAction("IndexSesionado", "Home");
+            }
+
+            ViewBag.Error = "Usuario o contraseña incorrectos.";
+            return View("../Home/IniciarSesion");
         }
 
-        public static int RegistrarUsuario(Usuario u)
+        [HttpPost]
+        public IActionResult Registrarse(Usuario u)
         {
-            using var db = ObtenerConexion();
-            return db.QuerySingle<int>("sp_RegistrarUsuario", u,
-                commandType: System.Data.CommandType.StoredProcedure);
+            BD.RegistrarUsuario(u);
+            // Autologin opcional:
+            HttpContext.Session.SetString("UsuarioNombre", u.NombreUsuario);
+            return RedirectToAction("IndexSesionado", "Home");
         }
 
-        public static Usuario IniciarSesion(string usuario, string password)
+        [HttpGet]
+        public IActionResult Logout()
         {
-            using var db = ObtenerConexion();
-            return db.QueryFirstOrDefault<Usuario>(
-                "sp_IniciarSesion",
-                new { Usuario = usuario, Password = password },
-                commandType: System.Data.CommandType.StoredProcedure
-            );
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index","Home");
         }
     }
 }

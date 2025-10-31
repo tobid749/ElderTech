@@ -1,0 +1,25 @@
+@model Eldertech.Models.Articulo
+@{
+    ViewData["Title"] = "Crear Artículo";
+}
+
+<h2>Crear Artículo</h2>
+
+<form asp-action="CrearArticulo" asp-controller="Articulos" method="post" enctype="multipart/form-data">
+    <label>Título</label>
+    <input type="text" name="Titulo" required />
+
+    <label>Subtítulo</label>
+    <input type="text" name="Subtitulo" />
+
+    <label>Contenido</label>
+    <textarea name="Texto" rows="6"></textarea>
+
+    <label>Video (URL opcional)</label>
+    <input type="text" name="Video" />
+
+    <label>Imagen</label>
+    <input type="file" name="FotoFile" accept="image/*" />
+
+    <button type="submit">Guardar</button>
+</form>

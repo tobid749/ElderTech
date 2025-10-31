@@ -30,22 +30,23 @@
 
 
 
+<form asp-action="Registrarse" asp-controller="Auth" method="post">
 
-      <form asp-action="Registrarse" asp-controller="Auth" method="post">
-    <label>Usuario</label>
-    <input type="text" name="UsuarioNombre" required>
+<label>Usuario</label>
+<input type="text" name="NombreUsuario" required>
 
-    <label>Mail</label>
-    <input type="email" name="Mail" required>
+<label>Mail</label>
+<input type="email" name="Mail" required>
 
-    <label>Contraseña</label>
-    <input type="password" name="Password" required>
+<label>Contraseña</label>
+<input type="password" name="Password" required>
 
-    <label>Fecha de nacimiento</label>
-    <input type="date" name="FechaNacimiento" required>
+<label>Fecha de nacimiento</label>
+<input type="date" name="FechaNacimiento" required>
 
-    <button type="submit">Crear cuenta</button>
+<button type="submit">Crear cuenta</button>
 </form>
+
 
 
       <button class="google">
