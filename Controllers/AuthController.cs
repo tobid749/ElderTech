@@ -6,9 +6,9 @@ namespace Eldertech.Controllers
     public class AuthController : Controller
     {
         [HttpPost]
-        public IActionResult IniciarSesion(string Usuario, string Password)
+        public IActionResult IniciarSesion(string NombreUsuario, string Password)
         {
-            var user = BD.IniciarSesion(Usuario, Password);
+            var user = BD.IniciarSesion(NombreUsuario, Password);
 
             if (user != null)
             {

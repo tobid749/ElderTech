@@ -7,17 +7,12 @@ namespace Eldertech.Controllers
     {
         public IActionResult Index() => View();
 
-        public IActionResult IndexSesionado()
+       public IActionResult IndexSesionado()
         {
-            var articulos = BD.GetUltimosArticulos() ?? new List<Articulo>();
-            return View(articulos);
+            return View();
         }
 
-        public IActionResult Articulos()
-        {
-            var articulos = BD.GetArticulos() ?? new List<Articulo>();
-            return View(articulos);
-        }
+        
 
         public IActionResult IniciarSesion()
 {
@@ -32,5 +27,13 @@ namespace Eldertech.Controllers
         public IActionResult RecuperarContraseña() => View();
         public IActionResult Mail() => View();
         public IActionResult Articulos2() => View();
+        public IActionResult Articulos3() => View();
+        public IActionResult Articulos4() => View();
+        public IActionResult Aplicaciones() => View();
+        public IActionResult Articulos()
+{
+    return View();
+}
+
     }
 }
