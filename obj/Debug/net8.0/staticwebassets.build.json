@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q06kRbkoqMlVeEuXc5TKLf/Fs59MdzDb69s9BVOEnFY=",
+  "Hash": "Johr62fkf6SY4q3b4d2iGISw8uSIwexo+OWqyLqP1rI=",
   "Source": "Eldertech",
   "BasePath": "_content/Eldertech",
   "Mode": "Default",
@@ -207,6 +207,25 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Contrasena.jpg"
     },
     {
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Facebook.png",
+      "SourceId": "Eldertech",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
+      "BasePath": "_content/Eldertech",
+      "RelativePath": "Imagenes/Facebook.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\Facebook.png"
+    },
+    {
       "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\FondoIzquierdo.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
@@ -224,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagenes\\FondoIzquierdo.png"
+    },
+    {
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Galeria.png",
+      "SourceId": "Eldertech",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
+      "BasePath": "_content/Eldertech",
+      "RelativePath": "Imagenes/Galeria.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\Galeria.png"
     },
     {
       "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.jpeg",
@@ -262,6 +300,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagenes\\Gmail.webp"
+    },
+    {
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Google.png",
+      "SourceId": "Eldertech",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
+      "BasePath": "_content/Eldertech",
+      "RelativePath": "Imagenes/Google.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\Google.png"
     },
     {
       "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Instagram.jpg",
@@ -357,6 +414,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Imagenes\\MP.png"
+    },
+    {
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Netflix.jpg",
+      "SourceId": "Eldertech",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
+      "BasePath": "_content/Eldertech",
+      "RelativePath": "Imagenes/Netflix.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Imagenes\\Netflix.jpg"
     },
     {
       "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Whatsapp.png",

@@ -1,8 +1,7 @@
-/* Fuentes */
+
 @import url('https://fonts.cdnfonts.com/css/coolvetica');
 @import url('https://fonts.cdnfonts.com/css/creato-display');
 
-/* Banner */
 .banner-eldertech {
     width: 100%;
     height: 220px;
@@ -16,7 +15,6 @@
     border-bottom: 1px solid rgba(0,0,0,0.35);
 }
 
-/* Texto ElderTech */
 .banner-title {
     font-family: 'Coolvetica', sans-serif;
     font-style: italic;
@@ -27,7 +25,6 @@
     color: white;
 }
 
-/* “Elder” y “Tech” con colores separados */
 .banner-elder {
     color: #ffffff;
 }
@@ -35,7 +32,6 @@
     color: #1A3153;
 }
 
-/* Subtítulo */
 .banner-sub {
     font-family: 'Creato Display', sans-serif;
     font-size: 26px;
@@ -62,7 +58,6 @@ body {
   color: #e6e6e6;
 }
 
-/* Titulos de secciones */
 .titulo-seccion {
   font-family: 'Coolvetica', sans-serif;
   font-style: italic;
@@ -72,7 +67,6 @@ body {
   text-align: center;
 }
 
-/* Artículos */
 .articulos-grid {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +137,6 @@ width: 100%;
   border: 1px solid black;
 }
 
-/* Estructura general */
 nav {
   width: min(1200px, 96%);
   margin: 0 auto;

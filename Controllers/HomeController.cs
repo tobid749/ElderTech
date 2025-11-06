@@ -29,11 +29,23 @@ namespace Eldertech.Controllers
         public IActionResult Articulos2() => View();
         public IActionResult Articulos3() => View();
         public IActionResult Articulos4() => View();
-        public IActionResult Aplicaciones() => View();
         public IActionResult Articulos()
 {
     return View();
 }
+public IActionResult Aplicaciones()
+        {
+            var apps = BD.ObtenerAplicaciones();
+            return View(apps);
+        }
+
+        // ✅ Detalle por id
+        public IActionResult Aplicacion(int id)
+        {
+            var app = BD.ObtenerAplicacionPorId(id);
+            if (app == null) return RedirectToAction(nameof(Aplicaciones));
+            return View(app);
+        }
 
     }
 }

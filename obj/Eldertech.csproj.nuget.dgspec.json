@@ -56,6 +56,14 @@
             "dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "microsoft.aspnetcore.session": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "newtonsoft.json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
             }
           },
           "imports": [

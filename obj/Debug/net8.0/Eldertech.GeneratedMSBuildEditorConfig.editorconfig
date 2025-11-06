@@ -18,28 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\49373638\Downloads\ElderTech
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/49373638/Downloads/ElderTech/Views/Articulos/CrearArticulo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXENyZWFyQXJ0aWN1bG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/49373638/Downloads/ElderTech/Views/Articulos/Detalle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXERldGFsbGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/49373638/Downloads/ElderTech/Views/Articulos/Editar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXEVkaXRhci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/49373638/Downloads/ElderTech/Views/Articulos/Lista.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWN1bG9zXExpc3RhLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/49373638/Downloads/ElderTech/Views/Auth/IniciarSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmljaWFyU2VzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49373638/Downloads/ElderTech/Views/Auth/Registrarse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3RyYXJzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Aplicacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcGxpY2FjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49373638/Downloads/ElderTech/Views/Home/Aplicaciones.cshtml]
@@ -68,10 +56,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/49373638/Downloads/ElderTech/Views/Home/IndexSesionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFNlc2lvbmFkby5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/49373638/Downloads/ElderTech/Views/Home/IniciarSesion.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmljaWFyU2VzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49373638/Downloads/ElderTech/Views/Home/Mail.cshtml]

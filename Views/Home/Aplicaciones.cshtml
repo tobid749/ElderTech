@@ -1,4 +1,5 @@
-@model IEnumerable<Eldertech.Models.Articulo>
+@model IEnumerable<Eldertech.Models.Aplicacion>
+
 @{
     ViewData["Title"] = "Aplicaciones";
 }
@@ -36,41 +37,42 @@
 
     <h2 class="titulo-seccion">Elegi una aplicación</h2>
     <div class="app-selector">
-        <a href='@Url.Action("Instagram", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/instagram.jpg" alt="Instagram">
             <p>Instagram</p>
         </a>
-        <a href='@Url.Action("Whatsapp", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
             <p>WhatsApp</p>
         </a>
-        <a href='@Url.Action("Gmail", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/gmail.jpeg" alt="Gmail">
             <p>Gmail</p>
         </a>
-        <a href='@Url.Action("MP", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/MP.png" alt="MP">
             <p>Mercado Pago</p>
         </a>
     </div>
     <div class="app-selector">
-        <a href='@Url.Action("Netflix", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/Netflix.jpg" alt="Netflix">
             <p>Netflix</p>
         </a>
-        <a href='@Url.Action("Facebook", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/Facebook.png" alt="Facebook">
             <p>Facebook</p>
         </a>
-        <a href='@Url.Action("Google", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/Google.png" alt="Google">
             <p>Google</p>
         </a>
-        <a href='@Url.Action("GoogleFotos", "Home")' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
             <img src="/Imagenes/Galeria.png" alt="Google Fotos">
             <p>Google Fotos</p>
         </a>
     </div>
+
 
 </main>
 
@@ -98,6 +100,16 @@
             }
         });
     });
+    
+
+    @foreach (var app in Model)
+    {
+        <a href='@Url.Action("Aplicacion", "Home", new { id = app.IDAplicacion })' class="app-card">
+            <img src="@app.Foto" alt="@app.Nombre" />
+            <p>@app.Nombre</p>
+        </a>
+    }
+
 </script>
 }
 

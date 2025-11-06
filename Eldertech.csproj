@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="dapper" Version="2.1.66" />
+    <PackageReference Include="microsoft.aspnetcore.session" Version="2.3.0" />
     <PackageReference Include="Microsoft.data.sqlclient" Version="6.1.2" />
+    <PackageReference Include="newtonsoft.json" Version="13.0.4" />
   </ItemGroup>
 
 </Project>

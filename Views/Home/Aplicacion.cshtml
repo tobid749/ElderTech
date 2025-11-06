@@ -1,0 +1,40 @@
+@model Eldertech.Models.Aplicacion
+@{
+    ViewData["Title"] = Model.Nombre;
+}
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+      </a>
+
+      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
+        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
+      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")' style="background-color: #008D36;">Aplicaciones</a></li>
+      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+      <li><a href='@Url.Action("Ayuda", "Home")'>Necesito ayuda</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <section class="banner-eldertech">
+        <h1 class="banner-title">@Model.Nombre</h1>
+    </section>
+
+    <main class="container mt-5 text-center">
+        <img src="@Model.Foto" style="width:220px;height:220px;object-fit:contain;" />
+        <p class="lead mt-3">Muy pronto aprenderás a usar @Model.Nombre.</p>
+
+        <a href='@Url.Action("Aplicaciones", "Home")' class="btn btn-primary mt-3">
+            ← Volver a Aplicaciones
+        </a>
+    </main>

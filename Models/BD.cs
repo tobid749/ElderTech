@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using System.Data;                 // ← necesario para CommandType
 using Microsoft.Data.SqlClient;
-using Dapper;
 
+using System.Linq;
+using Dapper;
 namespace Eldertech.Models
 {
     public static class BD
@@ -34,6 +37,28 @@ namespace Eldertech.Models
             }, commandType: System.Data.CommandType.StoredProcedure);
         }
 
+ public static List<Aplicacion> ObtenerAplicaciones()
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                return db.Query<Aplicacion>(
+                    "sp_ObtenerAplicaciones",
+                    commandType: CommandType.StoredProcedure   // ← ahora compila
+                ).ToList();
+            }
+        }
+
+        public static Aplicacion ObtenerAplicacionPorId(int id)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                return db.QueryFirstOrDefault<Aplicacion>(
+                    "sp_ObtenerAplicacionPorId",
+                    new { IDAplicacion = id },
+                    commandType: CommandType.StoredProcedure   // ← ahora compila
+                );
+            }
+        }
 
       
 

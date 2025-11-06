@@ -182,3 +182,7 @@ C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\runtimes\win\lib\net8.0\S
 C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\Eldertech.csproj.AssemblyReference.cache
 C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\Eldertech.sourcelink.json
 C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\Eldertech.csproj.Up2Date
+C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll

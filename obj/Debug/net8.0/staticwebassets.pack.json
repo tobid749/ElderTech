@@ -33,8 +33,16 @@
       "PackagePath": "staticwebassets\\Imagenes\\Contrasena.jpg"
     },
     {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Facebook.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Facebook.png"
+    },
+    {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\FondoIzquierdo.png",
       "PackagePath": "staticwebassets\\Imagenes\\FondoIzquierdo.png"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Galeria.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Galeria.png"
     },
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.jpeg",
@@ -43,6 +51,10 @@
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.webp",
       "PackagePath": "staticwebassets\\Imagenes\\Gmail.webp"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Google.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Google.png"
     },
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Instagram.jpg",
@@ -63,6 +75,10 @@
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\MP.png",
       "PackagePath": "staticwebassets\\Imagenes\\MP.png"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Netflix.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Netflix.jpg"
     },
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Whatsapp.png",
