@@ -41,6 +41,14 @@
       "PackagePath": "staticwebassets\\Imagenes\\Gmail.jpeg"
     },
     {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.webp",
+      "PackagePath": "staticwebassets\\Imagenes\\Gmail.webp"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Instagram.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\Instagram.jpg"
+    },
+    {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Iphone17.png",
       "PackagePath": "staticwebassets\\Imagenes\\Iphone17.png"
     },
@@ -51,6 +59,14 @@
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Logo.png",
       "PackagePath": "staticwebassets\\Imagenes\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\MP.png",
+      "PackagePath": "staticwebassets\\Imagenes\\MP.png"
+    },
+    {
+      "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Whatsapp.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Whatsapp.png"
     },
     {
       "Id": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\css\\site.css",

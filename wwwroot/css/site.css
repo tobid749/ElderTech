@@ -24,11 +24,12 @@
     margin: 0;
     padding: 0;
     font-weight: 300;
+    color: white;
 }
 
 /* “Elder” y “Tech” con colores separados */
 .banner-elder {
-    color: #008D36;
+    color: #ffffff;
 }
 .banner-tech {
     color: #1A3153;
@@ -630,6 +631,47 @@ footer div {
   border-top: 1px solid #ccc;
   padding-top: 4px;
   text-align: right;
+}
+/* ✅ Tarjetas grandes e idénticas */
+.app-card {
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  width: 240px;       /* ✅ Más grande */
+  height: 240px;      /* ✅ Cuadradas, todas iguales */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 25px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+}
+
+/* ✅ Íconos más grandes y proporcionados */
+.app-card img {
+  width: 110px;      /* ✅ Tamaño uniforme */
+  height: 110px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* ✅ Hover con presencia */
+.app-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+}
+
+/* ✅ Alineación perfecta */
+.app-selector {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 35px;
 }
 
 
