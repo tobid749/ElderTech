@@ -28,6 +28,7 @@
 .banner-elder {
     color: #ffffff;
 }
+
 .banner-tech {
     color: #1A3153;
 }
@@ -666,7 +667,151 @@ footer div {
   flex-wrap: wrap;
   margin-top: 35px;
 }
+.banner-eld{
+  color: #008D36;
+}
+.aplicacion-contenedor {
+  width: 95%;
+  margin: 0 auto;
+}
 
+.aplicacion-content {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+/* Imagen */
+.aplicacion-img-container {
+  width: 350px;
+  text-align: center;
+}
+
+.aplicacion-img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+/* Preguntas */
+.aplicacion-preguntas {
+  width: 55%;
+  text-align: center;
+}
+
+.preguntas-title,
+.articulos-title {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 32px;
+  font-style: italic;
+  color: #1A3153;
+  margin-bottom: 20px;
+}
+
+.pregunta-text {
+  font-size: 20px;
+  font-family: 'Creato Display', sans-serif;
+  color: #123;
+}
+
+.respuesta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px 0 35px;
+}
+
+.pregunta button {
+  width: 220px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 2px solid #dcdcdc;
+  font-size: 15px;
+  font-family: 'Creato Display', sans-serif;
+  transition: .3s ease;
+}
+
+.correcta {
+  background: #008D36 !important;
+  color: #ffffff !important;
+  border-color: #006d29 !important;
+}
+
+.incorrecta {
+  background: #E60026 !important;
+  color: white !important;
+  border-color: #9b001a !important;
+}
+
+/* Artículos relacionados */
+.articulos-rel {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* 🎯 Estilo general del botón de respuesta */
+.respuesta-grid button {
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.25s ease;
+}
+
+/* 🖱️ Hover elegante */
+.respuesta-grid button:hover:not(:disabled) {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* ✅ Correcto */
+.correcta {
+  background-color: #008D36 !important;
+  color: white !important;
+}
+
+/* ❌ Incorrecto */
+.incorrecta {
+  background-color: #E74C3C !important;
+  color: white !important;
+}
+
+/* 🔒 Cuando ya eligió una opción */
+.respuesta-grid button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.respuesta-grid button {
+  background-color: #1A3153 !important;
+  color: white !important;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  width: 100%;
+  transition: .25s;
+}
+
+.respuesta-grid button:hover:not(:disabled) {
+  opacity: .85;
+  transform: scale(1.03);
+}
+
+.correcta {
+  background-color: #008D36 !important;
+}
+
+.incorrecta {
+  background-color: #E74C3C !important;
+}
 
 
 

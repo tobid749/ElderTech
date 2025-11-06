@@ -1,6 +1,7 @@
 @model Eldertech.Models.Aplicacion
 @{
     ViewData["Title"] = Model.Nombre;
+    var preguntas = ViewBag.Preguntas as List<Eldertech.Models.PreguntaAplicacion>;
 }
 <header>
   <nav>
@@ -25,16 +26,78 @@
     </ul>
   </nav>
 </header>
+<section class="banner-eldertech">
+    <h1 class="banner-title">@Model.Nombre</h1>
+</section>
 
-    <section class="banner-eldertech">
-        <h1 class="banner-title">@Model.Nombre</h1>
-    </section>
+<main class="aplicacion-contenedor">
 
-    <main class="container mt-5 text-center">
-        <img src="@Model.Foto" style="width:220px;height:220px;object-fit:contain;" />
-        <p class="lead mt-3">Muy pronto aprenderás a usar @Model.Nombre.</p>
+    <div class="aplicacion-content">
 
-        <a href='@Url.Action("Aplicaciones", "Home")' class="btn btn-primary mt-3">
-            ← Volver a Aplicaciones
-        </a>
-    </main>
+        <div class="aplicacion-img-container">
+            <img src="@Model.Foto" alt="@Model.Nombre" class="aplicacion-img">
+        </div>
+
+        <div class="aplicacion-preguntas">
+            <h2 class="preguntas-title">Preguntas</h2>
+
+          @{
+    var pregunta = ViewBag.PreguntaActual as Eldertech.Models.PreguntaAplicacion;
+    var opciones = ViewBag.OpcionesMezcladas as List<(string text, int num)>;
+}
+
+@if (pregunta != null)
+{
+    <div class="pregunta" data-correcta="@pregunta.Correcta">
+        <p class="pregunta-text">@pregunta.Enunciado</p>
+
+        <div class="respuesta-grid">
+            @foreach (var opc in opciones)
+            {
+                <button data-num="@opc.num">@opc.text</button>
+            }
+        </div>
+
+       <form method="post" asp-action="Siguiente" asp-route-id="@Model.IDAplicacion" asp-route-next="@ViewBag.NextIndex">
+    <button id="btnSiguiente" class="btn-siguiente" disabled>Siguiente ➜</button>
+</form>
+
+    </div>
+}
+
+        </div>
+    </div>
+
+    <h2 class="articulos-title">Artículos relacionados</h2>
+
+    <div class="articulos-rel">
+        <!-- Aquí luego integramos Artículos desde DB -->
+        <p style="color:#777; text-align:center;">Muy pronto disponibles ✅</p>
+    </div>
+
+</main>
+
+
+
+
+<script>
+
+
+document.querySelectorAll('.pregunta button[data-num]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        const cont = btn.closest('.pregunta');
+        const correcta = cont.dataset.correcta;
+        cont.querySelectorAll('button[data-num]').forEach(b=>{
+            b.disabled=true;
+            if(b.dataset.num === correcta)
+                b.classList.add('correcta');
+            else
+                b.classList.add('incorrecta');
+        });
+
+        document.getElementById("btnSiguiente").disabled = false;
+    });
+});
+
+
+</script>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Eldertech")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+385765093f5dce1ef09098eba5f26758aebf72a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdd0825df949efe88658b19005905cc1dc52b7f0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Eldertech")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Eldertech")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -33,122 +33,13 @@
     <p class="banner-sub">Aprendé con tus apps favoritas</p>
 </section>
 
-<main class="container mt-5">
-
-    <h2 class="titulo-seccion">Elegi una aplicación</h2>
-    <div class="app-selector">
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/instagram.jpg" alt="Instagram">
-            <p>Instagram</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
-            <p>WhatsApp</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/gmail.jpeg" alt="Gmail">
-            <p>Gmail</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/MP.png" alt="MP">
-            <p>Mercado Pago</p>
-        </a>
-    </div>
-    <div class="app-selector">
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/Netflix.jpg" alt="Netflix">
-            <p>Netflix</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/Facebook.png" alt="Facebook">
-            <p>Facebook</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/Google.png" alt="Google">
-            <p>Google</p>
-        </a>
-        <a href='@Url.Action("Aplicacion", "Home")' class="app-card">
-            <img src="/Imagenes/Galeria.png" alt="Google Fotos">
-            <p>Google Fotos</p>
-        </a>
-    </div>
-
-
-</main>
-
-@section Scripts {
-<script>
-    // Animación de respuesta correcta / incorrecta
-    document.querySelectorAll('.pregunta button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const correcta = btn.parentElement.dataset.correcta;
-            const botones = btn.parentElement.querySelectorAll('button');
-
-            botones.forEach(b => {
-                b.disabled = true;
-                if (b.textContent === correcta) {
-                    b.classList.add('correcta');
-                } else if (b === btn && b.textContent !== correcta) {
-                    b.classList.add('incorrecta');
-                }
-            });
-
-            if (btn.textContent === correcta) {
-                btn.classList.add('animacion-correcta');
-            } else {
-                btn.classList.add('animacion-incorrecta');
-            }
-        });
-    });
-    
-
+<div class="app-selector">
     @foreach (var app in Model)
     {
-        <a href='@Url.Action("Aplicacion", "Home", new { id = app.IDAplicacion })' class="app-card">
+        <a href='@Url.Action("Aplicacion", "Home", new { id = app.IDAplicacion })'
+           class="app-card">
             <img src="@app.Foto" alt="@app.Nombre" />
             <p>@app.Nombre</p>
         </a>
     }
-
-</script>
-}
-
-<style>
-.app-selector {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-.app-card {
-  text-align: center;
-  background: white;
-  border: 1px solid #dcdcdc;
-  border-radius: 15px;
-  padding: 20px;
-  width: 200px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.app-card img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 10px;
-}
-
-.app-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 3px 14px rgba(0,0,0,0.2);
-}
-
-/* Animaciones */
-.correcta { background-color: #2ecc71 !important; color: white; }
-.incorrecta { background-color: #e74c3c !important; color: white; }
-
-.animacion-correcta { animation: correcto 0.4s ease; }
-.animacion-incorrecta { animation: incorrecto 0.4s ease; }
-
-</style>
+</div>
