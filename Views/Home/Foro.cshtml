@@ -1,0 +1,136 @@
+@model IEnumerable<Eldertech.Models.ForoMensaje>
+
+
+@{
+    ViewData["Title"] = "Foro";
+}
+
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+      </a>
+
+      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
+        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login" >Iniciar Sesión</a></li>
+      <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+
+<section class="banner-eldertech">
+  <h1 class="banner-title"><span class="banner-elder">Foro</span></h1>
+</section>
+
+
+<main class="container mt-5 foro-container">
+  <h2 class="titulo-seccion mb-4">Mensajes:</h2>
+
+
+  <div class="foro-grid">
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar1.png" alt="Avatar Marta" class="foro-avatar">
+        <h4>MartaGomez</h4>
+        <p>02/10/2025 • 09:15</p>
+      </div>
+      <p class="foro-texto">
+        Me encantó el artículo sobre cómo usar el modo incógnito, fue fácil de entender y pude seguirlo sin problemas.
+      </p>
+    </div>
+
+
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar2.png" alt="Avatar Carlos" class="foro-avatar">
+        <h4>CarlosTech</h4>
+        <p>02/10/2025 • 10:02</p>
+      </div>
+      <p class="foro-texto">
+        El tutorial de ahorro de batería está genial. Mi celular ahora dura mucho más tiempo cargado.
+      </p>
+    </div>
+
+
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar3.png" alt="Avatar Rosa" class="foro-avatar">
+        <h4>Rosa67</h4>
+        <p>02/10/2025 • 11:48</p>
+      </div>
+      <p class="foro-texto">
+        Gracias por el artículo sobre fotos y videos en WhatsApp. Pude hablar con mis nietos sin problema.
+      </p>
+    </div>
+
+
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar4.png" alt="Avatar Juan" class="foro-avatar">
+        <h4>JuanPerez</h4>
+        <p>01/10/2025 • 16:23</p>
+      </div>
+      <p class="foro-texto">
+        La explicación para crear correos fue súper sencilla. Ahora tengo mi cuenta lista para enviar mensajes.
+      </p>
+    </div>
+
+
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar5.png" alt="Avatar Tere" class="foro-avatar">
+        <h4>TereDigital</h4>
+        <p>02/10/2025 • 12:30</p>
+      </div>
+      <p class="foro-texto">
+        La guía para recuperar la contraseña del Wi-Fi fue clara. Me siento más segura al usarlo.
+      </p>
+    </div>
+
+
+    <div class="foro-card">
+      <div class="foro-perfil">
+        <img src="/Imagenes/Avatar6.png" alt="Avatar Vicente" class="foro-avatar">
+        <h4>Vicente_R</h4>
+        <p>01/10/2025 • 16:40</p>
+      </div>
+      <p class="foro-texto">
+        Pude conectar mi celular al televisor sin problemas. Fue fácil gracias a sus instrucciones claras.
+      </p>
+    </div>
+  </div>
+
+
+  <section class="foro-publicar mt-5">
+    <h4>Escribir un mensaje:</h4>
+    <textarea class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+    <button class="btn btn-success" id="btn-publicar">Publicar</button>
+    <p id="msg-error" class="text-danger">❌ Debes iniciar sesión para publicar un mensaje.</p>
+  </section>
+</main>
+
+
+@section Scripts {
+<script>
+  document.getElementById("btn-publicar").addEventListener("click", function() {
+    const error = document.getElementById("msg-error");
+    error.style.opacity = "1";
+  });
+</script>
+}
+
+
+

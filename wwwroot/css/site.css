@@ -812,6 +812,566 @@ footer div {
 .incorrecta {
   background-color: #E74C3C !important;
 }
+.correcta {
+  background-color: #008D36 !important;
+  color: white !important;
+}
+
+.incorrecta {
+  background-color: #D64541 !important;
+  color: white !important;
+}
+
+.respuesta-grid button {
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.respuesta-grid button:hover:not(:disabled) {
+  background-color: #3CAA36;
+  transform: scale(1.05);
+}
+
+.btn-siguiente {
+  margin-top: 25px;
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-siguiente:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.respuesta-grid button {
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.respuesta-grid button:hover:not(:disabled) {
+  background-color: #3CAA36;
+  transform: scale(1.05);
+}
+
+.correcta {
+  background-color: #008D36 !important;
+  color: #fff !important;
+}
+
+.incorrecta {
+  background-color: #D64541 !important;
+  color: #fff !important;
+}
+
+.btn-siguiente {
+  margin-top: 25px;
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-siguiente:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* ====== Mensaje de resultado animado ====== */
+.resultado-msg {
+  font-family: 'Creato Display', sans-serif;
+  font-size: 20px;
+  margin-top: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.correcto-msg {
+  color: #008D36; /* Verde */
+  font-weight: 600;
+}
+
+.incorrecto-msg {
+  color: #D64541; /* Rojo */
+  font-weight: 600;
+}
+
+/* ====== Botones de opciones ====== */
+.respuesta-grid button {
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.respuesta-grid button:hover:not(:disabled) {
+  background-color: #3CAA36;
+  transform: scale(1.05);
+}
+
+.correcta {
+  background-color: #008D36 !important;
+  color: #fff !important;
+}
+
+.incorrecta {
+  background-color: #D64541 !important;
+  color: #fff !important;
+}
+
+/* ====== Botón siguiente ====== */
+.btn-siguiente {
+  margin-top: 25px;
+  background-color: #1A3153;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-siguiente:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* Estado base */
+.respuesta-grid button {
+  background-color: #1A3153 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 12px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
+  background-image: none !important;   /* evita degradados Bootstrap */
+}
+
+/* Hover solo si no está deshabilitado */
+.respuesta-grid button:hover:not(:disabled) {
+  transform: scale(1.03);
+}
+
+/* 🔒 NO blanquear deshabilitados (algunas libs lo hacen) */
+.respuesta-grid button:disabled {
+  opacity: 1 !important;
+  filter: none !important;
+  background-image: none !important;
+}
+
+/* ✅ Correcta (también cuando está disabled) */
+.respuesta-grid button.correcta,
+.respuesta-grid button.correcta:disabled {
+  background-color: #008D36 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* ❌ Incorrecta (también cuando está disabled) */
+.respuesta-grid button.incorrecta,
+.respuesta-grid button.incorrecta:disabled {
+  background-color: #D64541 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Mensaje de resultado */
+.resultado-msg {
+  font-family: 'Creato Display', sans-serif;
+  font-size: 20px;
+  margin-top: 14px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .45s ease-in-out;
+}
+.correcto-msg { color: #008D36; font-weight: 600; }
+.incorrecto-msg { color: #D64541; font-weight: 600; }
+
+/* Botón Siguiente */
+.btn-siguiente {
+  margin-top: 22px;
+  background-color: #1A3153 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.btn-siguiente:disabled {
+  background-color: #1A3153 !important; /* mismo color pero atenuado con opacidad */
+  opacity: .5 !important;
+  cursor: not-allowed;
+}
+.banner-elder {
+  color: #3CAA36; /* Verde suave */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.25); /* leve sombra para contraste */
+}
+
+.banner-tech {
+  color: #1A3153; /* Azul profundo */
+}
+  /* ---------- Foro ---------- */
+  .titulo-seccion {
+    color: #1a2a44;
+    font-weight: 600;
+  }
+ 
+  .foro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+ 
+  .foro-card {
+    border: 1px solid #b8b8b8;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    min-height: 150px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+ 
+  .foro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+ 
+  .foro-perfil {
+    border-right: 1px solid #b8b8b8;
+    padding: 10px;
+    text-align: center;
+    min-width: 120px;
+  }
+ 
+  .foro-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    object-fit: cover;
+  }
+ 
+  .foro-perfil h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #222;
+  }
+ 
+  .foro-perfil p {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 5px 0;
+  }
+ 
+  .foro-perfil small {
+    font-size: 0.8rem;
+    color: #00796b;
+    display: block;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+ 
+  .foro-texto {
+    padding: 15px;
+    font-size: 0.95rem;
+    color: #333;
+    flex: 1;
+    line-height: 1.5;
+  }
+ 
+  /* ---------- Zona de Publicar ---------- */
+  .foro-publicar {
+    margin-top: 50px;
+    text-align: left;
+  }
+ 
+  .foro-publicar h4 {
+    color: #0d3b66;
+    margin-bottom: 10px;
+  }
+ 
+  .foro-publicar textarea {
+    resize: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    width: 100%;
+  }
+ 
+  #msg-error {
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+ 
+  /* ---------- Botones ---------- */
+  .btn-success {
+    background-color: #008D36;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+ 
+  .btn-success:hover {
+    background-color: #006B28;
+  }
+  /* ---------- NAV RIGHT ---------- */
+
+
+
+
+
+
+
+
+/* Botones de login y registro */
+.btn-login,
+.btn-register {
+ 
+  padding: 8px 16px;
+ 
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* Estilo coherente con el header */
+.nav-links a {
+  text-decoration: none;
+  color: #0d3b66;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+
+
+
+.nav-links a:hover {
+  background-color: #008D36;
+  color: white;
+  transform: scale(1.05);
+}
+
+
+
+
+.foro-publicar h4{
+  text-align: center;
+}
+
+
+.btn-volver {
+  position: relative;
+  z-index: 10; /* 🔹 Se pone delante de la imagen */
+  background: rgba(255,255,255,0.9);
+  border: none;
+  color: #1A3153;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.2s;
+}
+
+.btn-volver:hover {
+  transform: scale(1.1);
+}
+
+.fondoIzquierda {
+  position: absolute;
+  inset: 0;
+  background: url("/Imagenes/FondoIzquierdo.png") center/cover no-repeat;
+  opacity: 0.9;
+  z-index: 1; /* 🔹 El fondo queda detrás del botón */
+}
+
+
+.btn-volver {
+  position: absolute;
+  top: 15px;          /* 🔹 Lo coloca arriba */
+  left: 15px;         /* 🔹 Lo coloca a la izquierda */
+  z-index: 10;        /* 🔹 Siempre por encima del fondo */
+  background: white;
+  color: #1A3153;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 42px;  /* 🔹 Centra la flecha verticalmente */
+  text-align: center; /* 🔹 Centra horizontalmente */
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #008D36;   /* Verde ElderTech */
+  color: white;
+  transform: scale(1.1);
+}
+
+.btn-volver {
+  position: absolute;
+  top: 18px; /* 🔹 Distancia desde arriba */
+  left: 18px; /* 🔹 Distancia desde la izquierda */
+  z-index: 10;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  color: #1A3153;
+  font-size: 20px;
+  display: flex; /* 🔹 Centrado real */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-volver:hover {
+  background: #008D36; /* Verde ElderTech */
+  color: white;
+  transform: scale(1.08);
+}
+
+.avatar img,
+.avatarRegistrarse img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto; /* 🔹 centra perfectamente en el círculo */
+}
+
+
+/* === Igualar avatar en Iniciar Sesión y Registrarse === */
+.avatar,
+.avatarRegistrarse {
+  width: 140px;
+  height: 140px;
+  background-color: #d9dde4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.75rem;
+  overflow: hidden;
+}
+
+/* 🔹 Imagen centrada y del mismo tamaño */
+.avatar img,
+.avatarRegistrarse img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 🔹 Eliminar márgenes del <figure> */
+.avatarRegistrarse figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

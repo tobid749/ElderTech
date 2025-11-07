@@ -22,7 +22,7 @@
       <li><a href='@Url.Action("Aplicaciones", "Home")' style="background-color: #008D36;">Aplicaciones</a></li>
       <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
-      <li><a href='@Url.Action("Ayuda", "Home")'>Necesito ayuda</a></li>
+    <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
   </nav>
 </header>
@@ -43,27 +43,32 @@
 
           @{
     var pregunta = ViewBag.PreguntaActual as Eldertech.Models.PreguntaAplicacion;
-    var opciones = ViewBag.OpcionesMezcladas as List<(string text, int num)>;
+    var opciones = ViewBag.OpcionesMezcladas as List<(string texto, int num)>;
 }
 
-@if (pregunta != null)
+@if (pregunta != null && opciones != null)
 {
     <div class="pregunta" data-correcta="@pregunta.Correcta">
+
         <p class="pregunta-text">@pregunta.Enunciado</p>
 
         <div class="respuesta-grid">
-            @foreach (var opc in opciones)
+            @foreach (var op in opciones)
             {
-                <button data-num="@opc.num">@opc.text</button>
+                <button data-num="@op.num">@op.texto</button>
             }
         </div>
 
-       <form method="post" asp-action="Siguiente" asp-route-id="@Model.IDAplicacion" asp-route-next="@ViewBag.NextIndex">
-    <button id="btnSiguiente" class="btn-siguiente" disabled>Siguiente ➜</button>
-</form>
-
+        <form method="post" asp-action="Siguiente" asp-route-id="@Model.IDAplicacion" asp-route-next="@ViewBag.NextIndex">
+            <button id="btnSiguiente" class="btn-siguiente" disabled>Siguiente ➜</button>
+        </form>
     </div>
 }
+else
+{
+    <p class="sinPreguntas">Muy pronto vas a poder practicar con preguntas de esta aplicación ✅</p>
+}
+
 
         </div>
     </div>
@@ -81,23 +86,55 @@
 
 
 <script>
+@section Scripts {
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const preguntas = document.querySelectorAll('.pregunta button[data-num]');
+    if (!preguntas.length) return;
 
+    preguntas.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cont = btn.closest('.pregunta');
+            const correcta = cont.dataset.correcta;
+            const botones = cont.querySelectorAll('button[data-num]');
+            const nextBtn = document.getElementById("btnSiguiente");
 
-document.querySelectorAll('.pregunta button[data-num]').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-        const cont = btn.closest('.pregunta');
-        const correcta = cont.dataset.correcta;
-        cont.querySelectorAll('button[data-num]').forEach(b=>{
-            b.disabled=true;
-            if(b.dataset.num === correcta)
-                b.classList.add('correcta');
-            else
-                b.classList.add('incorrecta');
+            // Crear o seleccionar el mensaje
+            let msg = cont.querySelector('.resultado-msg');
+            if (!msg) {
+                msg = document.createElement('p');
+                msg.classList.add('resultado-msg');
+                cont.appendChild(msg);
+            }
+
+            // Desactivar botones y colorear
+            botones.forEach(b => {
+                b.disabled = true;
+                if (b.dataset.num === correcta) {
+                    b.classList.add('correcta');
+                } else if (b === btn) {
+                    b.classList.add('incorrecta');
+                }
+            });
+
+            // Mostrar mensaje
+            if (btn.dataset.num === correcta) {
+                msg.textContent = "¡Correcto! ✅";
+                msg.className = "resultado-msg correcto-msg";
+            } else {
+                msg.textContent = "Ups, no era esa 😅";
+                msg.className = "resultado-msg incorrecto-msg";
+            }
+
+            msg.style.opacity = "1";
+
+            // Desaparecer después de 1.5s y habilitar siguiente
+            setTimeout(() => {
+                msg.style.opacity = "0";
+                if (nextBtn) nextBtn.disabled = false;
+            }, 1500);
         });
-
-        document.getElementById("btnSiguiente").disabled = false;
     });
 });
-
-
 </script>
+}

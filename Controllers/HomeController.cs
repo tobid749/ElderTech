@@ -7,102 +7,102 @@ namespace Eldertech.Controllers
     {
         public IActionResult Index() => View();
 
-       public IActionResult IndexSesionado()
+        public IActionResult IndexSesionado()
         {
             return View();
         }
 
-        
-
         public IActionResult IniciarSesion()
-{
-    return View("~/Views/Auth/IniciarSesion.cshtml");
-}
+        {
+            return View("~/Views/Auth/IniciarSesion.cshtml");
+        }
 
         public IActionResult Registrarse()
-{
-    return View("~/Views/Auth/Registrarse.cshtml");
-}
+        {
+            return View("~/Views/Auth/Registrarse.cshtml");
+
+        }
 
         public IActionResult RecuperarContraseña() => View();
+        public IActionResult Foro() => View();
+        public IActionResult ForoSesionado(int offset = 0)
+{
+    var mensajes = BD.ObtenerMensajes(offset);
+    ViewBag.Offset = offset;
+    ViewBag.MostrarMas = mensajes.Count == 6; // Si hay 6, mostrar botón
+    return View(mensajes);
+}
+
+[HttpPost]
+public IActionResult PublicarMensaje(string mensaje)
+{
+    if (string.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioNombre")))
+        return RedirectToAction("IniciarSesion", "Home");
+
+    string usuario = HttpContext.Session.GetString("UsuarioNombre");
+    BD.AgregarMensaje(usuario, mensaje, "/Imagenes/AvatarDefault.png");
+
+    return RedirectToAction("ForoSesionado");
+}
         public IActionResult Mail() => View();
         public IActionResult Articulos2() => View();
         public IActionResult Articulos3() => View();
         public IActionResult Articulos4() => View();
-        public IActionResult Articulos()
-{
-    return View();
-}
-public IActionResult Aplicaciones()
+        public IActionResult Articulos() => View();
+        public IActionResult NecesitoAyuda() => View();
+        public IActionResult Contacto() => View();
+
+        // ✅ Página principal de Aplicaciones
+        public IActionResult Aplicaciones()
         {
             var apps = BD.ObtenerAplicaciones();
             return View(apps);
         }
 
-        // ✅ Detalle por id
-     public IActionResult Aplicacion(int id, int? index)
-{
-    var app = BD.ObtenerAplicacionPorId(id);
-    if (app == null) return RedirectToAction("Aplicaciones");
+        // ✅ Muestra la aplicación seleccionada con sus preguntas
+        public IActionResult Aplicacion(int id, int? index)
+        {
+            var app = BD.ObtenerAplicacionPorId(id);
+            if (app == null) return RedirectToAction("Aplicaciones");
 
-    var preguntas = BD.ObtenerPreguntasPorAplicacion(id);
+            var preguntas = BD.ObtenerPreguntasPorAplicacion(id);
 
-    if (preguntas.Count == 0)
-    {
-        ViewBag.PreguntaActual = null;
-        return View(app);
-    }
+            if (preguntas == null || preguntas.Count == 0)
+            {
+                ViewBag.PreguntaActual = null;
+                return View(app);
+            }
 
-    int pos = index ?? 0;
-    if (pos >= preguntas.Count) pos = 0;
+            // índice actual (posición de la pregunta)
+            int pos = index ?? 0;
+            if (pos >= preguntas.Count) pos = 0;
 
-    ViewBag.PreguntaActual = preguntas[pos];
-    ViewBag.NextIndex = pos + 1;
-    ViewBag.TotalPreguntas = preguntas.Count;
+            var preguntaActual = preguntas[pos];
 
-    return View(app);
-}
+            // 🔀 Mezclamos las opciones
+            Random rnd = new();
+            var opciones = new List<(string texto, int num)>
+            {
+                (preguntaActual.Opcion1, 1),
+                (preguntaActual.Opcion2, 2),
+                (preguntaActual.Opcion3, 3),
+                (preguntaActual.Opcion4, 4)
+            };
+            opciones = opciones.OrderBy(x => rnd.Next()).ToList();
 
-public IActionResult Pregunta(int id)
-{
-    var app = BD.ObtenerAplicacionPorId(id);
-    var preguntas = BD.ObtenerPreguntasPorAplicacion(id);
+            ViewBag.PreguntaActual = preguntaActual;
+            ViewBag.OpcionesMezcladas = opciones;
+            ViewBag.NextIndex = pos + 1;
+            ViewBag.TotalPreguntas = preguntas.Count;
 
-    if (app == null || preguntas.Count == 0)
-        return RedirectToAction("Aplicaciones");
+            return View(app);
+        }
 
-    Random rnd = new Random();
-    int index = rnd.Next(preguntas.Count);
-
-    var pregunta = preguntas[index];
-
-    // Armamos lista de opciones mezcladas
-    var opciones = new List<(string text, int num)>
-    {
-        (pregunta.Opcion1, 1),
-        (pregunta.Opcion2, 2),
-        (pregunta.Opcion3, 3),
-        (pregunta.Opcion4, 4)
-    };
-
-    opciones = opciones.OrderBy(x => rnd.Next()).ToList();
-
-    ViewBag.PreguntaActual = pregunta;
-    ViewBag.OpcionesMezcladas = opciones;
-
-    return View("Aplicacion", app);
-}
-
-
-
-[HttpPost]
-[HttpPost]
-public IActionResult Siguiente(int id, int next)
-{
-    return RedirectToAction("Aplicacion", new { id = id, index = next });
-}
-
-
-
+        // ✅ Botón siguiente
+        [HttpPost]
+        public IActionResult Siguiente(int id, int next)
+        {
+            return RedirectToAction("Aplicacion", new { id = id, index = next });
+        }
     }
 }

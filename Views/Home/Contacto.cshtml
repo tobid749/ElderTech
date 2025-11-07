@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Contactanos";
+}
+
+
+<section class="contenedor">
+   
+    <!-- Panel izquierdo -->
+    <div class="panel-izquierdo">
+        <button class="btn-volver" onclick="history.back()">←</button>
+        </div>
+    </div>
+
+
+    <!-- Panel derecho -->
+    <div class="panel-derecho">
+        <section class="avatar">
+            <figure>
+                <img src="~/Imagenes/Avatar.png" alt="Avatar de usuario" />
+            </figure>
+        </section>
+
+
+        <h1>Contactanos</h1>
+        <p class="descripcion-contacto">Dejá en este espacio tu comentario.</p>
+
+
+        <section class="formContactanos">
+            <form asp-action="EnviarComentario" method="post">
+                <textarea id="Comentario" name="Comentario" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+
+        <div class="redes-contacto">
+            <div><img src="~/Imagenes/instagram.png" alt="Instagram" />eldertech_</div>
+            <div><img src="~/Imagenes/telefono.png" alt="Teléfono" />11-1234-5678</div>
+            <div><img src="~/Imagenes/x.png" alt="X" />eldertech</div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div>
+        <small>© ElderTech</small>
+        <small>Ayuda: ElderTech6@gmail.com</small>
+    </div>
+</footer>
+
+

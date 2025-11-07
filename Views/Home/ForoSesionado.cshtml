@@ -1,0 +1,87 @@
+@model IEnumerable<Eldertech.Models.ForoMensaje>
+
+
+
+
+@{
+    ViewData["Title"] = "Foro";
+}
+
+
+
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+      </a>
+
+      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
+        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
+      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")' style="background-color: #008D36;">Aplicaciones</a></li>
+      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="banner-eldertech">
+  <h1 class="banner-title"><span class="banner-elder">Foro</span></h1>
+</section>
+
+<section class="foro-publicar mt-5">
+    <h4>Escribir un mensaje:</h4>
+
+    <form method="post" asp-action="PublicarMensaje">
+        <textarea name="mensaje" class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+        <button type="submit" class="btn btn-success">Publicar</button>
+    </form>
+</section>
+
+<hr />
+
+<div class="foro-grid">
+@foreach (var m in Model)
+{
+    <div class="foro-card">
+        <div class="foro-perfil">
+            <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
+            <h4>@m.NombreUsuario</h4>
+            <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
+        </div>
+        <p class="foro-texto">@m.Mensaje</p>
+    </div>
+}
+</div>
+
+@if (ViewBag.MostrarMas)
+{
+    <form method="get" asp-action="ForoSesionado">
+        <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
+        <button class="btn btn-primary mt-4">Ver más</button>
+    </form>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

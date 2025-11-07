@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>ElderTech · Necesito Ayuda</title>
+</head>
+
+
+<body>
+
+
+<section class="contenedor">
+ 
+  <!-- Panel izquierdo -->
+  <div class="panel-izquierdo">
+    <button class="btn-volver" onclick="history.back()">←</button>
+    <section class="fondoIzquierda"></section>
+  </div>
+
+
+  <!-- Panel derecho -->
+  <div class="panel-derecho">
+    <section class="avatar">
+      <figure>
+        <img src="/Imagenes/Avatar.png" alt="Avatar de usuario" />
+      </figure>
+    </section>
+
+
+    <h1>Necesito ayuda</h1>
+
+
+    <section class="formNecesitoAyuda">
+      <form>
+        <label for="tema">Tema</label>
+        <select id="tema" name="Tema" required>
+          <option value="tema1">Tema1</option>
+          <option value="tema2">Tema2</option>
+          <option value="otro">Otro</option>
+        </select>
+
+
+        <label for="duda">Duda</label>
+        <textarea id="duda" name="Duda" rows="4" required></textarea>
+
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+</section>
+
+
+<footer>
+  <div>
+    <small>© ElderTech</small>
+    <small>Ayuda: ElderTech6@gmail.com</small>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
