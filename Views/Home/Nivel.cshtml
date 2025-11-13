@@ -1,0 +1,50 @@
+@model List<Eldertech.Models.CaminoPregunta>
+
+<h2 class="titulo-nivel">Nivel @ViewBag.Nivel</h2>
+
+<div class="preguntas-container">
+
+@foreach (var p in Model)
+{
+    <div class="pregunta">
+        <h4>@p.Enunciado</h4>
+
+        <button class="opcion" data-correcta="@p.Correcta" data-num="1">@p.Opcion1</button>
+        <button class="opcion" data-correcta="@p.Correcta" data-num="2">@p.Opcion2</button>
+        <button class="opcion" data-correcta="@p.Correcta" data-num="3">@p.Opcion3</button>
+        <button class="opcion" data-correcta="@p.Correcta" data-num="4">@p.Opcion4</button>
+    </div>
+}
+
+    <form method="post" action="/Home/GuardarResultado">
+        <input type="hidden" id="nivel" name="nivel" value="@ViewBag.Nivel" />
+        <input type="hidden" id="estrellas" name="estrellas" />
+        <button type="submit" class="guardar-btn">Finalizar nivel</button>
+    </form>
+
+</div>
+
+<script>
+let correctas = 0;
+
+document.querySelectorAll(".opcion").forEach(b => {
+    b.onclick = () => {
+        let correcta = b.dataset.correcta;
+        let num = b.dataset.num;
+
+        if (correcta === num) {
+            b.style.background = "#008D36"; // verde
+            correctas++;
+        } else {
+            b.style.background = "red";
+        }
+    }
+});
+
+document.querySelector(".guardar-btn").onclick = () => {
+    let estrellas = correctas >= 6 ? 3 :
+                    correctas >= 3 ? 2 : 1;
+
+    document.getElementById("estrellas").value = estrellas;
+};
+</script>

@@ -1,0 +1,61 @@
+@model List<Eldertech.Models.CaminoNivel>
+
+@{
+    ViewData["Title"] = "Camino";
+}
+
+
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+      </a>
+
+      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
+        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+      <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+    </ul>
+  </nav>
+</header>
+
+@model List<Eldertech.Models.CaminoNivel>
+
+<section class="camino-banner">
+    <h1>Camino de Aprendizaje</h1>
+</section>
+
+<div class="camino-grid">
+
+@foreach (var nivel in Model)
+{
+    <a href="@Url.Action("Nivel", "Home", new { id = nivel.IDNivel })" class="camino-nivel">
+
+        <div class="nivel-num">@nivel.IDNivel</div>
+
+        @if (nivel.Estrellas > 0)
+        {
+            <div class="nivel-estrellas">
+                @for (int i = 1; i <= nivel.Estrellas; i++)
+                {
+                    <span class="estrella llena">★</span>
+                }
+                @for (int i = nivel.Estrellas + 1; i <= 3; i++)
+                {
+                    <span class="estrella vacia">☆</span>
+                }
+            </div>
+        }
+    </a>
+}
+</div>

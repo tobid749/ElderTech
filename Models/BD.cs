@@ -116,6 +116,45 @@ public static void AgregarMensaje(string nombreUsuario, string mensaje, string a
         Avatar = avatar ?? "/Imagenes/default-avatar.png"
     }, commandType: CommandType.StoredProcedure);
 }
+ // ---------------- CAMINO --------------------
 
+        public static List<CaminoNivel> ObtenerNiveles(int idUsuario)
+        {
+            using var db = ObtenerConexion();
+            return db.Query<CaminoNivel>(
+                "sp_Camino_GetNiveles",
+                new { IDUsuario = idUsuario },
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+        }
+
+        public static List<CaminoPregunta> ObtenerPreguntasCamino(int nivel)
+        {
+            using var db = ObtenerConexion();
+            return db.Query<CaminoPregunta>(
+                "sp_Camino_GetPreguntas",
+                new { IDNivel = nivel },
+                commandType: CommandType.StoredProcedure
+            ).ToList();
+        }
+
+        public static void GuardarResultadoCamino(int idUsuario, int nivel, int estrellas)
+        {
+            using var db = ObtenerConexion();
+            db.Execute("sp_Camino_GuardarResultado",
+                new { IDUsuario = idUsuario, IDNivel = nivel, Estrellas = estrellas },
+                commandType: CommandType.StoredProcedure);
+        }
+
+        public static int GetUsuarioId(string nombreUsuario)
+        {
+            using var db = ObtenerConexion();
+            return db.QuerySingle<int>(
+                "SELECT IDUsuario FROM Usuarios WHERE NombreUsuario = @n",
+                new { n = nombreUsuario }
+            );
+        }
     }
 }
+    
+    
