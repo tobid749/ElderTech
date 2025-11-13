@@ -1,10 +1,8 @@
 @model IEnumerable<Eldertech.Models.ForoMensaje>
 
-
 @{
     ViewData["Title"] = "Foro";
 }
-
 
 <header>
   <nav>
@@ -22,115 +20,78 @@
     <ul class="nav-links">
       <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
       <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
-      <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login" >Iniciar Sesión</a></li>
+      <li><a href='@Url.Action("Foro", "Home")' style="background-color: #008D36;">Foro</a></li>
+      <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login">Iniciar Sesión</a></li>
       <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
     </ul>
   </nav>
 </header>
 
-
-
 <section class="banner-eldertech">
   <h1 class="banner-title"><span class="banner-elder">Foro</span></h1>
 </section>
 
-
-<main class="container mt-5 foro-container">
-  <h2 class="titulo-seccion mb-4">Mensajes:</h2>
-
-
-  <div class="foro-grid">
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar1.png" alt="Avatar Marta" class="foro-avatar">
-        <h4>MartaGomez</h4>
-        <p>02/10/2025 • 09:15</p>
-      </div>
-      <p class="foro-texto">
-        Me encantó el artículo sobre cómo usar el modo incógnito, fue fácil de entender y pude seguirlo sin problemas.
-      </p>
-    </div>
-
-
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar2.png" alt="Avatar Carlos" class="foro-avatar">
-        <h4>CarlosTech</h4>
-        <p>02/10/2025 • 10:02</p>
-      </div>
-      <p class="foro-texto">
-        El tutorial de ahorro de batería está genial. Mi celular ahora dura mucho más tiempo cargado.
-      </p>
-    </div>
-
-
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar3.png" alt="Avatar Rosa" class="foro-avatar">
-        <h4>Rosa67</h4>
-        <p>02/10/2025 • 11:48</p>
-      </div>
-      <p class="foro-texto">
-        Gracias por el artículo sobre fotos y videos en WhatsApp. Pude hablar con mis nietos sin problema.
-      </p>
-    </div>
-
-
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar4.png" alt="Avatar Juan" class="foro-avatar">
-        <h4>JuanPerez</h4>
-        <p>01/10/2025 • 16:23</p>
-      </div>
-      <p class="foro-texto">
-        La explicación para crear correos fue súper sencilla. Ahora tengo mi cuenta lista para enviar mensajes.
-      </p>
-    </div>
-
-
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar5.png" alt="Avatar Tere" class="foro-avatar">
-        <h4>TereDigital</h4>
-        <p>02/10/2025 • 12:30</p>
-      </div>
-      <p class="foro-texto">
-        La guía para recuperar la contraseña del Wi-Fi fue clara. Me siento más segura al usarlo.
-      </p>
-    </div>
-
-
-    <div class="foro-card">
-      <div class="foro-perfil">
-        <img src="/Imagenes/Avatar6.png" alt="Avatar Vicente" class="foro-avatar">
-        <h4>Vicente_R</h4>
-        <p>01/10/2025 • 16:40</p>
-      </div>
-      <p class="foro-texto">
-        Pude conectar mi celular al televisor sin problemas. Fue fácil gracias a sus instrucciones claras.
-      </p>
-    </div>
-  </div>
-
-
-  <section class="foro-publicar mt-5">
+<section class="foro-publicar mt-5">
     <h4>Escribir un mensaje:</h4>
-    <textarea class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..."></textarea>
-    <button class="btn btn-success" id="btn-publicar">Publicar</button>
-    <p id="msg-error" class="text-danger">❌ Debes iniciar sesión para publicar un mensaje.</p>
-  </section>
-</main>
 
+    <textarea id="mensaje" class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+
+    <button class="btn btn-success" id="btn-publicar">Publicar</button>
+
+    <div id="msg-error" class="alert alert-danger mt-3" style="display:none;">
+        ❌ Debes iniciar sesión para publicar un mensaje.
+        <br />
+        <a href='@Url.Action("IniciarSesion","Home")' class="btn btn-sesion">Iniciar Sesión</a>
+    </div>
+</section>
+
+<hr />
+
+<div class="foro-grid">
+@foreach (var m in Model)
+{
+    <div class="foro-card">
+        <div class="foro-perfil">
+            <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
+            <h4>@m.NombreUsuario</h4>
+            <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
+        </div>
+        <p class="foro-texto">@m.Mensaje</p>
+    </div>
+}
+</div>
+
+@if (ViewBag.MostrarMas)
+{
+    <form method="get" asp-action="Foro">
+        <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
+        <button class="btn btn-primary mt-4">Ver más</button>
+    </form>
+}
 
 @section Scripts {
 <script>
-  document.getElementById("btn-publicar").addEventListener("click", function() {
-    const error = document.getElementById("msg-error");
-    error.style.opacity = "1";
-  });
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const btn = document.getElementById("btn-publicar");
+        const error = document.getElementById("msg-error");
+
+        if (btn) {
+            btn.addEventListener("click", function (e) {
+
+                e.preventDefault(); // ❌ No envía al servidor
+
+                error.style.display = "block"; // ✅ Muestra el mensaje
+
+                // Animación suave
+                error.style.opacity = 0;
+                setTimeout(() => { error.style.transition = "0.4s"; error.style.opacity = 1; }, 10);
+
+                // Baja scroll
+                window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            });
+        }
+    });
 </script>
+
 }
-
-
-

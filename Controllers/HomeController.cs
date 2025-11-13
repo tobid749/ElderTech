@@ -5,16 +5,34 @@ namespace Eldertech.Controllers
 {
     public class HomeController : Controller
     {
+        private bool UsuarioLogueado()
+{
+    return !string.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioNombre"));
+}
+
+private IActionResult RedirigirSegunSesion(string vistaSinSesion, string vistaConSesion)
+{
+    return UsuarioLogueado() ? View(vistaConSesion) : View(vistaSinSesion);
+}
+
         public IActionResult Index() => View();
-        public IActionResult IndexSesionado() => View();
+        public IActionResult IndexSesionado()
+        {
+            return View("~/Views/Home/IndexSesionado.cshtml");
+            if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
+        }
 
         public IActionResult IniciarSesion()
         {
+            if (UsuarioLogueado()) return RedirectToAction("IndexSesionado");
+
             return View("~/Views/Auth/IniciarSesion.cshtml");
         }
 
         public IActionResult Registrarse()
         {
+            if (UsuarioLogueado()) return RedirectToAction("IndexSesionado");
+
             return View("~/Views/Auth/Registrarse.cshtml");
         }
 
@@ -35,6 +53,7 @@ namespace Eldertech.Controllers
             ViewBag.Offset = offset;
             ViewBag.MostrarMas = mensajes.Count == 6;
             return View(mensajes);
+             if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
         }
 
         [HttpPost]
@@ -60,10 +79,13 @@ namespace Eldertech.Controllers
 
         // ------------------ APLICACIONES ------------------
         public IActionResult Aplicaciones()
-        {
-            var apps = BD.ObtenerAplicaciones();
-            return View(apps);
-        }
+{
+    if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
+
+    var apps = BD.ObtenerAplicaciones();
+    return View(apps);
+}
+
 
         public IActionResult Aplicacion(int id, int? index)
         {
@@ -119,6 +141,7 @@ namespace Eldertech.Controllers
             var niveles = BD.ObtenerNiveles(idUsuario);
 
             return View(niveles);
+             if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
         }
 
         public IActionResult Nivel(int id)
