@@ -1,0 +1,18 @@
+@model Eldertech.Models.NivelFinalViewModel
+
+<section class="nivel-fondo">
+
+    <h1 class="nivel-titulo">¡Nivel @Model.NumeroNivel completado!</h1>
+
+    <div class="estrellas-final">
+        @for (int i = 0; i < Model.EstrellasObtenidas; i++)
+        {
+            <span class="estrella-pop">⭐</span>
+        }
+    </div>
+
+    <a href="@Url.Action("Camino", "Home")" class="nivel-volver">
+        Volver al Camino
+    </a>
+
+</section>

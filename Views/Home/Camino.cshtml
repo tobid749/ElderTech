@@ -7,7 +7,7 @@
 <header>
   <nav>
     <div class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
+      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
         <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
       </a>
 
@@ -18,41 +18,71 @@
     </div>
 
     <ul class="nav-links">
-      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+      <li><a href='@Url.Action("Articulos", "Home")'style="background-color: #008D36;">Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
       <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-      <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="camino-banner">
-    <h1>Camino de Aprendizaje</h1>
+<section class="camino-fondo">
+
+    <section class="camino-banner">
+        <h1>Camino de Aprendizaje</h1>
+    </section>
+
+    <div class="camino-grid">
+
+        @foreach (var nivel in Model)
+        {
+            <a href="@Url.Action("Nivel", "Home", new { id = nivel.IDNivel })"
+   class="camino-nivel">
+
+    <!-- ⭐⭐ MINI ESTRELLITAS ARRIBA A LA DERECHA -->
+    <div class="nivel-estrellas-mini">
+        @for (int i = 0; i < nivel.Estrellas; i++)
+        {
+            <span class="estrella-mini">⭐</span>
+        }
+    </div>
+
+    <!-- Número grande -->
+    <div class="nivel-num">@nivel.IDNivel</div>
+
+</a>
+
+        }
+
+    </div>
+
 </section>
 
-<div class="camino-grid">
+<!-- Script -->
+<script>
+document.querySelectorAll(".nivel-opcion").forEach(btn => {
+    btn.addEventListener("click", function () {
 
-@foreach (var nivel in Model)
-{
-    <a href="@Url.Action("Nivel", "Home", new { id = nivel.IDNivel })" class="camino-nivel">
+        // Evita doble click
+        if (document.body.classList.contains("respondido")) return;
+        document.body.classList.add("respondido");
 
-        <div class="nivel-num">@nivel.IDNivel</div>
+        let correcto = this.dataset.correct === "true";
 
-        @if (nivel.Estrellas > 0)
-        {
-            <div class="nivel-estrellas">
-                @for (int i = 1; i <= nivel.Estrellas; i++)
-                {
-                    <span class="estrella llena">★</span>
-                }
-                @for (int i = nivel.Estrellas + 1; i <= 3; i++)
-                {
-                    <span class="estrella vacia">☆</span>
-                }
-            </div>
+        if (correcto) {
+            this.classList.add("correcta");
+        } else {
+            this.classList.add("incorrecta");
         }
-    </a>
-}
-</div>
+
+        // Mostrar botón siguiente después de 2 segundos si es correcto
+        if (correcto) {
+            setTimeout(() => {
+                document.getElementById("btnSiguiente").classList.remove("disabled");
+            }, 2000);
+        }
+    });
+});
+</script>

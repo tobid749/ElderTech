@@ -1907,8 +1907,430 @@ footer div {
   display: inline-block;
 }
 
+/* ------------------------------------------------------ */
+/*   FONDO DEL CAMINO ESTILO ELDERTECH (GRADIENT + IMGS)  */
+/* ------------------------------------------------------ */
+
+.camino-fondo {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #0fa66d 0%, #04204a 100%);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 80px;
+}
 
 
+/* Imagen decorativa izquierda (Netflix) */
+.camino-fondo::before {
+  content: "";
+  position: absolute;
+  background-image: url('/Imagenes/CaminoNetflix.png'); /* Cambiar si tu archivo tiene otro nombre */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 340px;
+  height: 520px;
+  left: -40px;
+  top: 180px;
+  opacity: 0.95;
+  z-index: 1;
+}
+
+/* Imagen decorativa derecha (WhatsApp) */
+.camino-fondo::after {
+  content: "";
+  position: absolute;
+  background-image: url('/Imagenes/CaminoWhatsapp.png'); /* Cambiar si tu archivo tiene otro nombre */
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 260px;
+  height: 260px;
+  right: 10px;
+  bottom: 30px;
+  opacity: 0.95;
+  z-index: 1;
+}
+
+/* Para que el contenido quede ARRIBA del fondo */
+.camino-grid,
+.camino-banner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ------------------------------------------------------ */
+/*                  ESTILOS DE LA GRID                   */
+/* ------------------------------------------------------ */
+
+.camino-banner {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.camino-banner h1 {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 60px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* Grid responsive */
+.camino-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 40px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tarjetas de nivel */
+.camino-nivel {
+  background: linear-gradient(180deg, #001a4d, #00306f);
+  border-radius: 20px;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  transition: transform .2s;
+}
+
+.camino-nivel:hover {
+  transform: scale(1.08);
+}
+
+/* Estrellas */
+.nivel-estrellas {
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.estrella.llena {
+  color: gold;
+}
+
+.estrella.vacia {
+  color: #ffffff70;
+}
+
+/* ------------------------------- */
+/*    FONDO NIVEL (ElderTech)      */
+/* ------------------------------- */
+
+.nivel-fondo {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #0fa66d 0%, #04204a 100%);
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+/* ------------------------------- */
+/*             TÍTULO              */
+/* ------------------------------- */
+
+.nivel-titulo {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 55px;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+/* ------------------------------- */
+/*        BARRA DE PROGRESO        */
+/* ------------------------------- */
+
+.nivel-progress-container {
+  width: 70%;
+  height: 22px;
+  margin: 0 auto 40px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nivel-progress-fill {
+  height: 100%;
+  background: #2da520;
+  transition: width .4s;
+}
+
+/* ------------------------------- */
+/*             PREGUNTA            */
+/* ------------------------------- */
+
+.nivel-pregunta {
+  font-size: 30px;
+  font-weight: 700;
+  width: 80%;
+  margin: 0 auto 40px auto;
+}
+
+/* ------------------------------- */
+/*             OPCIONES            */
+/* ------------------------------- */
+
+.nivel-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: 0 auto 60px auto;
+  gap: 30px;
+}
+
+.nivel-opcion {
+  background: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .3s;
+  cursor: pointer;
+}
+
+/* Incorrecta (roja) */
+.nivel-opcion.incorrecta {
+  background-color: #ff4d4d !important;
+  color: white;
+}
+
+/* Correcta (verde) */
+.nivel-opcion.correcta {
+  background-color: #2ecc71 !important;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ------------------------------- */
+/*     BOTÓN SIGUIENTE PREGUNTA    */
+/* ------------------------------- */
+
+.nivel-siguiente {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  background: #0fa66d;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 35px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+  opacity: 1;
+}
+
+/* Desactivado */
+.nivel-siguiente.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------ */
+/*   FONDO NIVEL (degradado verde -> azul)                */
+/* ------------------------------------------------------ */
+
+.nivel-fondo {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(90deg, #0fa66d 0%, #04204a 100%);
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------ */
+/*                    TÍTULO (WhatsApp)                   */
+/* ------------------------------------------------------ */
+
+.nivel-titulo {
+  font-family: 'Coolvetica', sans-serif;
+  font-size: 55px;
+  font-style: italic;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ------------------------------------------------------ */
+/*                  BARRA DE PROGRESO                     */
+/* ------------------------------------------------------ */
+
+.nivel-progress-container {
+  width: 70%;
+  height: 18px;
+  margin: 0 auto 45px auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nivel-progress-fill {
+  height: 100%;
+  background: #27ae60;
+  transition: width .4s;
+}
+
+/* ------------------------------------------------------ */
+/*                        PREGUNTA                        */
+/* ------------------------------------------------------ */
+
+.nivel-pregunta {
+  font-size: 28px;
+  font-weight: 700;
+  width: 80%;
+  margin: 0 auto 40px auto;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ------------------------------------------------------ */
+/*                        OPCIONES                        */
+/* ------------------------------------------------------ */
+
+.nivel-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+  margin: 0 auto;
+  gap: 40px 80px;  /* vertical / horizontal para que se vea como tu screenshot */
+}
+
+.nivel-opcion {
+  background: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+  color: #0b1f3b;
+}
+
+/* Correcta */
+.nivel-opcion.correcta {
+  background-color: #2ecc71 !important;
+  color: white !important;
+  transform: scale(1.07);
+}
+
+/* Incorrecta */
+.nivel-opcion.incorrecta {
+  background-color: #e74c3c !important;
+  color: white !important;
+  transform: scale(0.95);
+}
+
+/* ------------------------------------------------------ */
+/*                 BOTÓN SIGUIENTE                        */
+/* ------------------------------------------------------ */
+
+.nivel-siguiente {
+  position: absolute;
+  right: 40px;
+  bottom: 140px; /* ⬅ SUBIDO */
+  background: #0fa66d;
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  font-size: 34px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: .3s;
+  opacity: 1;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.35);
+}
+
+.nivel-siguiente:hover {
+  transform: scale(1.08);
+}
+
+.nivel-siguiente.disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+.estrellas-popup {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0;
+  transition: .4s ease;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+
+.estrellas-popup.mostrar {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.estrella-pop {
+  font-size: 55px;
+  margin: 0 8px;
+}
+
+.estrellas-final {
+  margin-top: 80px;
+  font-size: 60px;
+}
+
+.nivel-volver {
+  margin-top: 40px;
+  display: inline-block;
+  background: white;
+  padding: 15px 40px;
+  border-radius: 20px;
+  font-size: 24px;
+  color: #0a1e46;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(0,0,0,.3);
+}
+.nivel-estrellas-mini {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+.estrella-mini {
+  font-size: 14px;
+  color: gold;
+}
+.nivel-estrellas-mini {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  z-index: 3;
+}
+
+.estrella-mini {
+  font-size: 14px;
+  color: gold;
+}
+.camino-nivel {
+  position: relative;
+}
 
 
 

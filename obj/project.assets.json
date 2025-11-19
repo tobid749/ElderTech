@@ -2461,11 +2461,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\49373638\\Downloads\\ElderTech\\Eldertech.csproj",
+      "projectUniqueName": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\Eldertech.csproj",
       "projectName": "Eldertech",
-      "projectPath": "C:\\Users\\49373638\\Downloads\\ElderTech\\Eldertech.csproj",
+      "projectPath": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\Eldertech.csproj",
       "packagesPath": "C:\\Users\\49373638\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\49373638\\Downloads\\ElderTech\\obj\\",
+      "outputPath": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

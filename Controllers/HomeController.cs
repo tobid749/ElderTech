@@ -144,12 +144,66 @@ private IActionResult RedirigirSegunSesion(string vistaSinSesion, string vistaCo
              if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
         }
 
-        public IActionResult Nivel(int id)
+public IActionResult Nivel(int id, int index = 0, int correctas = 0)
+{
+    var preguntas = BD.ObtenerPreguntasCamino(id);
+
+    if (preguntas == null || preguntas.Count == 0)
+        return RedirectToAction("Camino");
+
+    // Si ya respondió todas las preguntas (6)
+    if (index >= preguntas.Count)
+    {
+        int estrellas = 0;
+
+        if (correctas >= 6)
+            estrellas = 3;
+        else if (correctas >= 4)
+            estrellas = 2;
+        else if (correctas >= 2)
+            estrellas = 1;
+
+        // Guardar en BD
+        int idUsuario = BD.GetUsuarioId(HttpContext.Session.GetString("UsuarioNombre"));
+        BD.GuardarResultadoCamino(idUsuario, id, estrellas);
+
+        // Pantalla final
+        var fin = new NivelFinalViewModel
         {
-            var preguntas = BD.ObtenerPreguntasCamino(id);
-            ViewBag.Nivel = id;
-            return View(preguntas);
+            NumeroNivel = id,
+            EstrellasObtenidas = estrellas
+        };
+
+        return View("NivelCompletado", fin);
+    }
+
+    // Pregunta actual
+    var p = preguntas[index];
+
+    // Construir ViewModel
+    var vm = new NivelViewModel
+    {
+        NumeroNivel = id,
+        TituloApp = "WhatsApp",
+        Pregunta = p.Enunciado,
+        PorcentajeCompletado = (index * 100) / preguntas.Count,
+        IndexPregunta = index,
+        CorrectasHastaAhora = correctas,
+
+        Opciones = new List<Opcion>
+        {
+            new Opcion { Texto = p.Opcion1, EsCorrecta = (p.Correcta == 1) },
+            new Opcion { Texto = p.Opcion2, EsCorrecta = (p.Correcta == 2) },
+            new Opcion { Texto = p.Opcion3, EsCorrecta = (p.Correcta == 3) },
+            new Opcion { Texto = p.Opcion4, EsCorrecta = (p.Correcta == 4) }
         }
+    };
+
+    return View(vm);
+}
+
+
+
 
         [HttpPost]
         public IActionResult GuardarResultado(int nivel, int estrellas)

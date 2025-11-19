@@ -1,50 +1,130 @@
-@model List<Eldertech.Models.CaminoPregunta>
+@model Eldertech.Models.NivelViewModel
 
-<h2 class="titulo-nivel">Nivel @ViewBag.Nivel</h2>
-
-<div class="preguntas-container">
-
-@foreach (var p in Model)
-{
-    <div class="pregunta">
-        <h4>@p.Enunciado</h4>
-
-        <button class="opcion" data-correcta="@p.Correcta" data-num="1">@p.Opcion1</button>
-        <button class="opcion" data-correcta="@p.Correcta" data-num="2">@p.Opcion2</button>
-        <button class="opcion" data-correcta="@p.Correcta" data-num="3">@p.Opcion3</button>
-        <button class="opcion" data-correcta="@p.Correcta" data-num="4">@p.Opcion4</button>
-    </div>
+@{
+    ViewData["Title"] = "Nivel " + Model.NumeroNivel;
 }
 
-    <form method="post" action="/Home/GuardarResultado">
-        <input type="hidden" id="nivel" name="nivel" value="@ViewBag.Nivel" />
-        <input type="hidden" id="estrellas" name="estrellas" />
-        <button type="submit" class="guardar-btn">Finalizar nivel</button>
-    </form>
+<header>
+  <nav>
+    <div class="nav-left">
+      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+      </a>
 
+      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
+        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+        <button type="submit" class="search-btn">🔍</button>
+      </form>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href='@Url.Action("Articulos", "Home")'style="background-color: #008D36;">Articulos</a></li>
+      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="nivel-fondo">
+
+    <!-- Título de la aplicación -->
+    <h1 class="nivel-titulo">@Model.TituloApp</h1>
+
+    <!-- Barra de progreso -->
+    <div class="nivel-progress-container">
+        <div class="nivel-progress-fill" style="width:@Model.PorcentajeCompletado%;"></div>
+    </div>
+
+    <!-- Pregunta -->
+    <h2 class="nivel-pregunta">@Model.Pregunta</h2>
+
+    <!-- Opciones -->
+    <div class="nivel-opciones">
+        @foreach (var opcion in Model.Opciones)
+        {
+            <button class="nivel-opcion"
+                    data-correct="@opcion.EsCorrecta.ToString().ToLower()">
+                @opcion.Texto
+            </button>
+        }
+
+    </div>
+    <div id="resultado-estrellas" class="estrellas-popup">
+    <span class="estrella-pop">⭐</span>
+    <span class="estrella-pop">⭐</span>
+    <span class="estrella-pop">⭐</span>
+    <p>¡Bien hecho!</p>
 </div>
 
+
+<a id="btnSiguiente"
+   href="#"
+   class="nivel-siguiente disabled"
+   data-baseurl="@Url.Action("Nivel", "Home")"
+   data-id="@Model.NumeroNivel"
+   data-index="@Model.IndexPregunta"
+   data-correctas="@Model.CorrectasHastaAhora">
+    ➤
+</a>
+
+
+
+
+</section>
+
 <script>
-let correctas = 0;
+document.querySelectorAll(".nivel-opcion").forEach(btn => {
 
-document.querySelectorAll(".opcion").forEach(b => {
-    b.onclick = () => {
-        let correcta = b.dataset.correcta;
-        let num = b.dataset.num;
+    btn.addEventListener("click", function () {
 
-        if (correcta === num) {
-            b.style.background = "#008D36"; // verde
-            correctas++;
+        // Evita doble click
+        if (document.body.classList.contains("respondido")) return;
+        document.body.classList.add("respondido");
+
+        let correcto = (this.dataset.correct === "true");
+
+        // Colorear botones
+        if (correcto) {
+            this.classList.add("correcta");
         } else {
-            b.style.background = "red";
+            this.classList.add("incorrecta");
+
+            // mostrar automáticamente la correcta
+            document.querySelectorAll(".nivel-opcion").forEach(o => {
+                if (o.dataset.correct === "true") {
+                    o.classList.add("correcta");
+                }
+            });
         }
-    }
+
+        // ACTIVAR EL BOTÓN "SIGUIENTE" SIEMPRE A LOS 2s
+        setTimeout(() => {
+
+            const btnSig = document.getElementById("btnSiguiente");
+
+            btnSig.classList.remove("disabled");
+
+            // Tomar los datos actuales
+            let base = btnSig.dataset.baseurl;
+            let id = btnSig.dataset.id;
+            let index = parseInt(btnSig.dataset.index);
+            let correctas = parseInt(btnSig.dataset.correctas);
+
+            // si fue correcta la suma
+            if (correcto)
+                correctas++;
+
+            // construir la URL siguiente
+            btnSig.href = `${base}?id=${id}&index=${index + 1}&correctas=${correctas}`;
+
+        }, 2000);
+
+    });
 });
-
-document.querySelector(".guardar-btn").onclick = () => {
-    let estrellas = correctas >= 6 ? 3 :
-                    correctas >= 3 ? 2 : 1;
-
-    document.getElementById("estrellas").value = estrellas;
-};
 </script>
+
+
+
