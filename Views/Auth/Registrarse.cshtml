@@ -11,41 +11,58 @@
 
 
 
-<body>
 
+
+
+
+<body>
+ <main>
   <section class="contenedor">
     <div>
         <section class = "fondoIzquierda">
             <a href="img/FondoIzquierdo.png" alt="Imagen fondo izquierda"></a>
+            <section class="btn-volver">
+    <button onclick="history.back()">←</button>
+</section>
         </section>
     </div>
 
+
     <div>
-        <section class = "avatarRegistrarse">
-            <figure>
-                  <img src="/Imagenes/Avatar.png" alt="Avatar de usuario (referencia)" />
-              </figure>
+        <section class="avatar">
+            <img src="/Imagenes/Avatar.png" alt="Avatar" />
         </section>
       <h1>Registrarse</h1>
 
 
 
+
+
+
 <form asp-action="Registrarse" asp-controller="Auth" method="post">
+
 
 <label>Usuario</label>
 <input type="text" name="NombreUsuario" required>
 
+
 <label>Mail</label>
 <input type="email" name="Mail" required>
+
 
 <label>Contraseña</label>
 <input type="password" name="Password" required>
 
+
 <label>Fecha de nacimiento</label>
 <input type="date" name="FechaNacimiento" required>
 
+
 <button type="submit">Crear cuenta</button>
 </form>
+
+
+
 
 
 
@@ -59,6 +76,7 @@
   continuar con Google
 </button>
 
+
       <section class="login">
         <p>
             <a href='@Url.Action("IniciarSesion", "Home")'>Ya tengo un usuario (iniciar sesión)</a>
@@ -67,6 +85,9 @@
      
     </div>
   </section>
+ </main>
+
+
 
 
 
@@ -79,3 +100,5 @@
   </footer>
 </body>
 </html>
+
+

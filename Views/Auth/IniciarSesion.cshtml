@@ -2,6 +2,7 @@
     ViewData["Title"] = "Iniciar Sesión";
 }
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,38 +12,48 @@
     <title>ElderTech · Iniciar Sesión</title>
 </head>
 
-<body>
 
+<body>
+ <main>
 @if (ViewBag.Error != null)
 {
-    <div style="color:red; text-align:center; font-weight:600; margin-top:15px;">
+    <section class="mensaje-error">
         @ViewBag.Error
-    </div>
+    </section>
 }
+
 
 <section class="contenedor">
     <div>
-        <section class="fondoIzquierda"></section>
+        <section class="fondoIzquierda"><section class="btn-volver">
+    <button onclick="history.back()">←</button>
+</section></section>
     </div>
+
 
     <div>
         <section class="avatar">
             <img src="/Imagenes/Avatar.png" alt="Avatar" />
         </section>
 
+
         <h1>Iniciar Sesión</h1>
+
 
         <section class="formIniciarSesion">
             <form asp-action="IniciarSesion" asp-controller="Auth" method="post">
                 <label>Usuario</label>
                 <input type="text" name="NombreUsuario" required>
 
+
                 <label>Contraseña</label>
                 <input type="password" name="Password" required>
+
 
                 <button type="submit">Ingresar</button>
             </form>
         </section>
+
 
         <button class="google">
             <svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" viewBox="0 0 256 262">
@@ -51,6 +62,7 @@
             continuar con Google
         </button>
 
+
         <section class="login">
             <p>
                 <a href='@Url.Action("Registrarse", "Auth")'>No tengo usuario |</a>
@@ -58,15 +70,17 @@
             </p>
         </section>
 
+
     </div>
 </section>
-
+</main>
 <footer>
     <div>
         <small>© ElderTech</small>
         <small>Ayuda: ElderTech6@gmail.com</small>
     </div>
 </footer>
-
 </body>
 </html>
+
+

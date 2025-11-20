@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,100 +11,186 @@
 
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+
+    <!-- IZQUIERDA: LOGO + BUSCADOR -->
+    <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
+      <section class="search-form">
+        <form action='@Url.Action("Articulos", "Home")' method="get" role="search">
+          <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+          <button type="submit">🔍</button>
+        </form>
+      </section>
+    </section>
 
-    <ul class="nav-links">
-      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-      <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
-      <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login" >Iniciar Sesión</a></li>
-      <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
-    </ul>
+    <!-- DERECHA: BOTONES -->
+    <section class="nav-links">
+      <ul>
+        <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+        <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+        <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+        <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login">Iniciar Sesión</a></li>
+        <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
+      </ul>
+    </section>
+
   </nav>
 </header>
 
+<main>
+
+<!-- BANNER -->
 <section class="banner-eldertech">
-    <h1 class="banner-title">
-    <span class="banner-elder">Elder</span><span class="banner-tech">Tech</span>
-</h1>
+    <h1>
+        <span class="banner-elder">Elder</span><span class="banner-tech">Tech</span>
+    </h1>
     <p class="banner-sub">El puente que necesitás</p>
 </section>
 
 
+<!-- ÚLTIMOS ARTÍCULOS -->
+<section>
+    <h2 class="titulo-seccion">Últimos artículos</h2>
 
-    <!-- Últimos artículos -->
-    <main class="container mt-5">
-        <h2 class="titulo-seccion mb-3">Últimos artículos</h2>
+    <section class="articulos-grid">
+
+        <section class="articulo">
+            <img src="/Imagenes/Iphone17.png" alt="iPhone" class="articulo-img">
+            <section class="articulo-info">
+                <h3>Iphone 17</h3>
+                <p>Todo lo que necesitás saber sobre el nuevo celular y cómo usarlo</p>
+                <p><b>Tobid749</b> - 17/2/25</p>
+            </section>
+        </section>
+
+        <section class="articulo">
+            <img src="/Imagenes/Lluvia.jpg" alt="Televisor" class="articulo-img">
+            <section class="articulo-info">
+                <h3>¿Cómo evitar la lluvia en la televisión?</h3>
+                <p>Guía de pasos para que no te pase esto en tu televisión.</p>
+                <p><b>AndiFish</b> - 17/2/25</p>
+            </section>
+        </section>
+
+        <section class="articulo">
+            <img src="/Imagenes/Chatgpt.jpg" alt="ChatGPT" class="articulo-img">
+            <section class="articulo-info">
+                <h3>¿Cómo aprender a usar IA para principiantes?</h3>
+                <p>No sabés usar IA? No hay problema, en ElderTech podés aprender.</p>
+                <p><b>Tobid749</b> - 17/2/25</p>
+            </section>
+        </section>
+
+    </section>
+</section>
 
 
-        <div class="articulos-grid">
-            <div class="articulo">
-                <img src="/Imagenes/Iphone17.png" alt="iPhone" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>Iphone 17</h3>
-                    <p>Todo lo que necesitás saber sobre el nuevo celular y cómo usarlo</p>
-                    <p><b>Tobid749</b> - 17/2/25</p>
-                </div>
-            </div>
+<!-- ARTÍCULOS POPULARES -->
+<section>
+    <h2 class="titulo-seccion">Artículos más populares</h2>
 
-            <div class="articulo">
-                <img src="/Imagenes/Lluvia.jpg" alt="Televisor" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>¿Cómo evitar la lluvia en la televisión?</h3>
-                    <p>Guía de pasos para que no te pase esto en tu televisión.</p>
-                    <p><b>AndiFish</b> - 17/2/25</p>
-                </div>
-            </div>
+    <section class="articulos-grid">
 
-            <div class="articulo">
-                <img src="/Imagenes/Chatgpt.jpg" alt="ChatGPT" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>¿Cómo aprender a usar IA para principiantes?</h3>
-                    <p>No sabés usar IA? No hay problema, en ElderTech podés aprender.</p>
-                    <p><b>Tobid749</b> - 17/2/25</p>
-                </div>
-            </div>
-        </div>
+        <section class="articulo">
+            <img src="/Imagenes/Gmail.jpeg" alt="Gmail" class="articulo-img">
+            <section class="articulo-info">
+                <h3>¿Cómo usar un Mail en 2025?</h3>
+                <p>Te traemos un nuevo tutorial, esta vez sobre Gmail.</p>
+                <p><b>Tobid749</b> - 08/08/23</p>
+            </section>
+        </section>
 
-        <h2 class="titulo-seccion mt-5">Artículos más populares</h2>
-        <div class="articulos-grid">
-            <div class="articulo">
-                <img src="/Imagenes/Gmail.jpeg" alt="Gmail" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>¿Cómo usar un Mail en 2025?</h3>
-                    <p>Te traemos un nuevo tutorial, esta vez sobre Gmail.</p>
-                    <p><b>Tobid749</b> - 08/08/23</p>
-                </div>
-            </div>
+        <section class="articulo">
+            <img src="/Imagenes/Chrome.png" alt="Google" class="articulo-img">
+            <section class="articulo-info">
+                <h3>¿Cómo iniciar sesión en Google Chrome?</h3>
+                <p>Guía de pasos para aprender a iniciar sesión en cualquier cuenta.</p>
+                <p><b>AndiFish</b> - 09/12/18</p>
+            </section>
+        </section>
 
-            <div class="articulo">
-                <img src="/Imagenes/Chrome.png" alt="Google" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>¿Cómo iniciar sesión en Google Chrome?</h3>
-                    <p>Guía de pasos para aprender a iniciar sesión en cualquier cuenta.</p>
-                    <p><b>AndiFish</b> - 09/12/18</p>
-                </div>
-            </div>
+        <section class="articulo">
+            <img src="/Imagenes/AppStore.jfif" alt="App Store" class="articulo-img">
+            <section class="articulo-info">
+                <h3>¿Cómo instalar apps usando App Store correctamente?</h3>
+                <p>Guía fácil y sencilla para instalar apps en cualquier momento.</p>
+                <p><b>NicoSchna</b> - 12/03/15</p>
+            </section>
+        </section>
 
-            <div class="articulo">
-                <img src="/Imagenes/AppStore.jfif" alt="App Store" class="articulo-img">
-                <div class="articulo-info">
-                    <h3>¿Cómo instalar apps usando App Store correctamente?</h3>
-                    <p>Guía fácil y sencilla para instalar apps en cualquier momento.</p>
-                    <p><b>NicoSchna</b> - 12/03/15</p>
-                </div>
-            </div>
-        </div>
-    </main>
+    </section>
+</section>
+
+
+<!-- LANDING INSTITUCIONAL -->
+<section class="landing-eldertech">
+
+    <section class="landing-bloque">
+        <h2>¿Qué es ElderTech?</h2>
+        <p>
+            ElderTech acompaña a las personas mayores en su camino digital. Enseñamos tecnología
+            de forma simple y paciente, promoviendo comunicación, trámites y autonomía diaria.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>Nuestra Idea</h2>
+        <p>
+            Ayudamos a quienes encuentran dificultades con la tecnología, brindando acompañamiento claro
+            para manejar comunicación, banca digital y tareas esenciales.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>Nuestro Propósito</h2>
+        <p>
+            Impulsar la inclusión digital mediante enseñanza simple y accesible, reduciendo la brecha
+            tecnológica y aumentando autonomía y confianza.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>¿Por qué nació ElderTech?</h2>
+        <p>
+            Nació ayudando a nuestros propios abuelos. Vimos su frustración y creamos una herramienta
+            accesible que devuelve autonomía a cada persona mayor.
+        </p>
+    </section>
+
+    <section class="landing-equipo">
+        <h2>Equipo ElderTech</h2>
+
+        <section class="equipo-grid">
+
+            <section class="equipo-card">
+                <h3>Nicolás Schnaider</h3>
+                <p>Backend</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Andrés Fishman</h3>
+                <p>Frontend</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Julián Hofman</h3>
+                <p>Diseño</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Tobías Digestani</h3>
+                <p>Project Leader & Fullstack</p>
+            </section>
+
+        </section>
+    </section>
+
+</section>
+
+</main>
 
 </body>
 </html>

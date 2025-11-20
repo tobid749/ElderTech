@@ -9,31 +9,43 @@
 
 
 
+<body>
+  
 
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+     <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
 
-    <ul class="nav-links">
+        <section class="search-form">
+              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
+                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                 <button type="submit" >🔍</button>
+               </form>
+      </section>
+    </section>
+
+
+
+
+     <section  class="nav-links">
+    <ul>
+        
       <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")' >Aplicaciones</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
       <li><a href='@Url.Action("ForoSesionado", "Home")'style="background-color: #008D36;">Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
+    </section>
   </nav>
 </header>
 
+<main>
 <section class="banner-eldertech">
   <h1 class="banner-title"><span class="banner-elder">Foro</span></h1>
 </section>
@@ -72,8 +84,8 @@
 }
 
 
-
-
+</main>
+</body>
 
 
 

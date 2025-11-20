@@ -3,32 +3,43 @@
 @{
     ViewData["Title"] = "Foro";
 }
+<body>
 
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+
+    <!-- IZQUIERDA: LOGO + BUSCADOR -->
+    <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
+      <section class="search-form">
+        <form action='@Url.Action("Articulos", "Home")' method="get" role="search">
+          <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+          <button type="submit">🔍</button>
+        </form>
+      </section>
+    </section>
 
-    <ul class="nav-links">
-      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-      <li><a href='@Url.Action("Foro", "Home")' style="background-color: #008D36;">Foro</a></li>
-      <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login">Iniciar Sesión</a></li>
-      <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
-    </ul>
+
+    <!-- DERECHA: BOTONES -->
+    <section class="nav-links">
+      <ul>
+        <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+        <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+        <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+        <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
+        <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+        <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito ayuda</a></li>
+      </ul>
+    </section>
+
   </nav>
 </header>
-
+<main>
 <section class="banner-eldertech">
-  <h1 class="banner-title"><span class="banner-elder">Foro</span></h1>
+    <h1><span>Artículos</span></h1>
 </section>
 
 <section class="foro-publicar mt-5">
@@ -68,7 +79,9 @@
         <button class="btn btn-primary mt-4">Ver más</button>
     </form>
 }
+</main>
 
+</body>
 @section Scripts {
 <script>
     document.addEventListener("DOMContentLoaded", function () {

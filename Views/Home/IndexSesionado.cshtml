@@ -1,31 +1,38 @@
 ﻿@{
     ViewData["Title"] = "Inicio Sesionado";
 }
-
+<body>
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+    <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
 
-    <ul class="nav-links">
-      <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+        <section class="search-form">
+              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
+                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                 <button type="submit" >🔍</button>
+               </form>
+      </section>
+    </section>
+
+
+
+
+     <section  class="nav-links">
+    <ul>
+      <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
       <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
       <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
+    </section>
   </nav>
 </header>
-
 <section class="banner-eldertech">
     <h1 class="banner-title">
     <span class="banner-elder">Elder</span><span class="banner-tech">Tech</span>
@@ -95,5 +102,71 @@
             </div>
         </div>
     </div>
+
+    <!-- LANDING INSTITUCIONAL -->
+<section class="landing-eldertech">
+
+    <section class="landing-bloque">
+        <h2>¿Qué es ElderTech?</h2>
+        <p>
+            ElderTech acompaña a las personas mayores en su camino digital. Enseñamos tecnología
+            de forma simple y paciente, promoviendo comunicación, trámites y autonomía diaria.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>Nuestra Idea</h2>
+        <p>
+            Ayudamos a quienes encuentran dificultades con la tecnología, brindando acompañamiento claro
+            para manejar comunicación, banca digital y tareas esenciales.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>Nuestro Propósito</h2>
+        <p>
+            Impulsar la inclusión digital mediante enseñanza simple y accesible, reduciendo la brecha
+            tecnológica y aumentando autonomía y confianza.
+        </p>
+    </section>
+
+    <section class="landing-bloque">
+        <h2>¿Por qué nació ElderTech?</h2>
+        <p>
+            Nació ayudando a nuestros propios abuelos. Vimos su frustración y creamos una herramienta
+            accesible que devuelve autonomía a cada persona mayor.
+        </p>
+    </section>
+
+    <section class="landing-equipo">
+        <h2>Equipo ElderTech</h2>
+
+        <section class="equipo-grid">
+
+            <section class="equipo-card">
+                <h3>Nicolás Schnaider</h3>
+                <p>Backend</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Andrés Fishman</h3>
+                <p>Frontend</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Julián Hofman</h3>
+                <p>Diseño</p>
+            </section>
+
+            <section class="equipo-card">
+                <h3>Tobías Digestani</h3>
+                <p>Project Leader & Fullstack</p>
+            </section>
+
+        </section>
+    </section>
+
+</section>
 </main>
 
+</body>

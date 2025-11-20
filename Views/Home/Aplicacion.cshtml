@@ -3,94 +3,132 @@
     ViewData["Title"] = Model.Nombre;
     var preguntas = ViewBag.Preguntas as List<Eldertech.Models.PreguntaAplicacion>;
 }
+<body>
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+    <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
 
-    <ul class="nav-links">
+        <section class="search-form">
+              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
+                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                 <button type="submit" >🔍</button>
+               </form>
+      </section>
+    </section>
+
+
+
+
+     <section  class="nav-links">
+    <ul>
       <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")' style="background-color: #008D36;">Aplicaciones</a></li>
+      <section class="fondo-verde">
+            <li><a href='@Url.Action("Aplicaciones", "Home")'style="background-color: #008D36;">Aplicaciones</a></li>
+     </section>
       <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
-    <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
+    </section>
   </nav>
 </header>
+
+
+
+
 <section class="banner-eldertech">
-    <h1 class="banner-title">@Model.Nombre</h1>
+    <h1>@Model.Nombre</h1>
 </section>
 
-<main class="aplicacion-contenedor">
 
-    <div class="aplicacion-content">
+<main >
+    <section class="aplicacion-contenedor">
 
-        <div class="aplicacion-img-container">
-            <img src="@Model.Foto" alt="@Model.Nombre" class="aplicacion-img">
-        </div>
 
-        <div class="aplicacion-preguntas">
-            <h2 class="preguntas-title">Preguntas</h2>
+    <section class="aplicacion-content">
+
+
+        <section class="aplicacion-img-container">
+            <img src="@Model.Foto" alt="@Model.Nombre">
+        </section>
+
+
+        <section class="aplicacion-preguntas">
+            <h2>Preguntas</h2>
+
 
           @{
-    var pregunta = ViewBag.PreguntaActual as Eldertech.Models.PreguntaAplicacion;
-    var opciones = ViewBag.OpcionesMezcladas as List<(string texto, int num)>;
-}
+             var pregunta = ViewBag.PreguntaActual as Eldertech.Models.PreguntaAplicacion;
+             var opciones = ViewBag.OpcionesMezcladas as List<(string texto, int num)>;
+            }
+
 
 @if (pregunta != null && opciones != null)
 {
-    <div class="pregunta" data-correcta="@pregunta.Correcta">
+    <section class="pregunta" data-correcta="@pregunta.Correcta">
+        <section class="pregunta">
+        <p >@pregunta.Enunciado</p>
+        </section>
 
-        <p class="pregunta-text">@pregunta.Enunciado</p>
 
-        <div class="respuesta-grid">
+        <section class="respuesta-grid">
             @foreach (var op in opciones)
             {
                 <button data-num="@op.num">@op.texto</button>
             }
-        </div>
+        </section>
+
 
         <form method="post" asp-action="Siguiente" asp-route-id="@Model.IDAplicacion" asp-route-next="@ViewBag.NextIndex">
-            <button id="btnSiguiente" class="btn-siguiente" disabled>Siguiente ➜</button>
+           <section class="btn-siguiente">
+    <button id="btnSiguiente" disabled>Siguiente ➜</button>
+</section>
         </form>
-    </div>
+    </section>
 }
 else
 {
-    <p class="sinPreguntas">Muy pronto vas a poder practicar con preguntas de esta aplicación ✅</p>
+     <section class="sinPreguntas">
+         <p>Muy pronto vas a poder practicar con preguntas de esta aplicación ✅</p>
+        </section>
+   
 }
 
 
-        </div>
-    </div>
 
-    <h2 class="articulos-title">Artículos relacionados</h2>
 
-    <div class="articulos-rel">
-        <!-- Aquí luego integramos Artículos desde DB -->
+        </section>
+    </section>
+
+
+    <section class="articulos-title">
+        <h2>Artículos relacionados</h2>
+    </section>
+
+
+    <section class="articulos-rel">
         <p style="color:#777; text-align:center;">Muy pronto disponibles ✅</p>
-    </div>
-
+    </section>
+</section>
 </main>
+</body>
+
+
 
 
 
 
 <script>
 @section Scripts {
-<script>
 document.addEventListener("DOMContentLoaded", function () {
     const preguntas = document.querySelectorAll('.pregunta button[data-num]');
     if (!preguntas.length) return;
+
 
     preguntas.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -99,7 +137,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const botones = cont.querySelectorAll('button[data-num]');
             const nextBtn = document.getElementById("btnSiguiente");
 
-            // Crear o seleccionar el mensaje
+
+           
             let msg = cont.querySelector('.resultado-msg');
             if (!msg) {
                 msg = document.createElement('p');
@@ -107,7 +146,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 cont.appendChild(msg);
             }
 
-            // Desactivar botones y colorear
+
+   
             botones.forEach(b => {
                 b.disabled = true;
                 if (b.dataset.num === correcta) {
@@ -117,7 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Mostrar mensaje
+
+         
             if (btn.dataset.num === correcta) {
                 msg.textContent = "¡Correcto! ✅";
                 msg.className = "resultado-msg correcto-msg";
@@ -126,9 +167,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 msg.className = "resultado-msg incorrecto-msg";
             }
 
+
             msg.style.opacity = "1";
 
-            // Desaparecer después de 1.5s y habilitar siguiente
+
+     
             setTimeout(() => {
                 msg.style.opacity = "0";
                 if (nextBtn) nextBtn.disabled = false;

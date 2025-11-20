@@ -1,45 +1,64 @@
 @model IEnumerable<Eldertech.Models.Aplicacion>
 
+
 @{
     ViewData["Title"] = "Aplicaciones";
 }
-
+<body>
 <header>
   <nav>
-    <div class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech" class="brand">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech" class="logo">
+     <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-      <form action='@Url.Action("Articulos", "Home")' method="get" class="search-form" role="search">
-        <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-        <button type="submit" class="search-btn">🔍</button>
-      </form>
-    </div>
 
-    <ul class="nav-links">
-      <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
+        <section class="search-form">
+              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
+                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                 <button type="submit" >🔍</button>
+               </form>
+      </section>
+    </section>
+
+
+
+
+     <section  class="nav-links">
+    <ul>
+        <section class="fondo-verde">
+            <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
+       </section>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")' style="background-color: #008D36;">Aplicaciones</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'style="background-color: #008D36;">Aplicaciones</a></li>
       <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
+    </section>
   </nav>
 </header>
 
+
+
+
 <section class="banner-eldertech">
-    <h1 class="banner-title"><span class="banner-elder">Aplicaciones</span></h1>
-    <p class="banner-sub">Aprendé con tus apps favoritas</p>
+    <h1><span>Aplicaciones</span></h1>
+    <p>Aprendé con tus apps favoritas</p>
 </section>
 
-<div class="app-selector">
+
+<main>
+<section class="app-selector">
     @foreach (var app in Model)
     {
-        <a href='@Url.Action("Aplicacion", "Home", new { id = app.IDAplicacion })'
-           class="app-card">
+        <section class="app-card">
+          <a href='@Url.Action("Aplicacion", "Home", new { id = app.IDAplicacion })'>
             <img src="@app.Foto" alt="@app.Nombre" />
             <p>@app.Nombre</p>
-        </a>
+          </a>
+        </section>
     }
-</div>
+</section>
+</main>
+</body>
