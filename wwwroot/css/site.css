@@ -1853,10 +1853,99 @@ nav {
 .foro-publicar {
   margin-bottom: 40px !important;
 }
+.nivel-estrellas-mini {
+  position: absolute;
+  top: 8px;
+
+  /* CENTRADO PERFECTO */
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 6px;
+
+  z-index: 3;
+}
+
+.estrella-mini {
+  font-size: 18px;
+  color: gold;
+}
+.banner-descripcion {
+  color: #1A3153;
+
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+.banner-descripcion-outer {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  font-family: 'Creato Display', sans-serif;
+  font-size: 22px;
+  color: #1A3153;
+  margin-top: 25px;
+  margin-bottom: -10px;  /* lo acerca a las tarjetas */
+  font-weight: 300;
+  line-height: 1.4;
+  opacity: 0.95;
+}
 
 
 
+/* Igualar tamaño de imágenes en tarjetas de Aplicaciones */
+.app-card img {
+  width: 120px;         /* Tamaño uniforme */
+  height: 120px;        /* Mismo alto */
+  object-fit: contain;  /* Mantiene proporciones sin deformar */
+  object-position: center;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 18px;  /* SEPARA la imagen del texto */
+}
+/* Texto de tarjetas de Aplicaciones en Creato Display */
+.app-card p {
+  font-family: 'Creato Display', sans-serif !important;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -5px;     /* Opcional: ajusta la separación */
+  color: #0e1b2b;        /* Mantiene el estilo ElderTech */
+  text-align: center;
+}
 
+.articulos-grid {
+  display: grid;
+  width: min(1100px, 95%);
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.articulo {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,.10);
+  transition: .2s ease;
+}
+
+.articulo:hover {
+  transform: scale(1.03);
+}
+
+.articulo-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.articulo-info h3 {
+  font-family: 'Coolvetica';
+  font-size: 22px;
+  font-style: italic;
+}
 
 
 

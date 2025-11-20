@@ -47,120 +47,42 @@
     <h1><span>Artículos</span></h1>
 </section>
 
+<main class="container mt-5">
+  <div class="articulos-grid">
+    @foreach (var art in Model)
+    {
+      <a class="articulo" href='@Url.Action("Articulo","Home", new { id = art.IDArticulo })'>
+        <img src="@art.Foto" alt="@art.Titulo" class="articulo-img" />
 
-<main>
-  <section class="container mt-5">
-    <section class="articulos">
+        <div class="articulo-info">
+          <h3>@art.Titulo</h3>
 
+          @if (!string.IsNullOrEmpty(art.Subtitulo))
+          {
+            <p>@art.Subtitulo</p>
+          }
 
-        <div>
-            <img src="/Imagenes/Iphone17.png" alt="iPhone" class="articulo-img">
-            <div>
-                <h3>Iphone 17</h3>
-                <p>Todo lo que necesitás saber sobre el nuevo celular y cómo usarlo</p>
-                <p><b>Tobid749</b> - 17/2/25</p>
-            </div>
+          <p><b>@art.Autor</b> - @art.Fecha.ToString("dd/MM/yy")</p>
         </div>
-
-
-        <div>
-            <img src="/Imagenes/Lluvia.jpg" alt="Televisor" class="articulo-img">
-            <div>
-                <h3>¿Cómo evitar la lluvia en la televisión?</h3>
-                <p>Guía de pasos para que no te pase esto en tu televisión.</p>
-                <p><b>AndiFish</b> - 17/2/25</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/Chatgpt.jpg" alt="ChatGPT" class="articulo-img">
-            <div>
-                <h3>¿Cómo aprender a usar IA para principiantes?</h3>
-                <p>No sabés usar IA? No hay problema, en ElderTech podés aprender.</p>
-                <p><b>Tobid749</b> - 17/2/25</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/Gmail.jpeg" alt="Gmail" class="articulo-img">
-            <div>
-                <h3>¿Cómo usar un Mail en 2025?</h3>
-                <p>Te traemos un nuevo tutorial, esta vez sobre Gmail.</p>
-                <p><b>Tobid749</b> - 08/08/23</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/Chrome.png" alt="Google" class="articulo-img">
-            <div>
-                <h3>¿Cómo iniciar sesión en Google Chrome?</h3>
-                <p>Guía de pasos para aprender a iniciar sesión en cualquier cuenta.</p>
-                <p><b>AndiFish</b> - 09/12/18</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/AppStore.jfif" alt="App Store" class="articulo-img">
-            <div>
-                <h3>¿Cómo instalar apps usando App Store correctamente?</h3>
-                <p>Guía fácil y sencilla para instalar apps en cualquier momento.</p>
-                <p><b>NicoSchna</b> - 12/03/15</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/Contrasena.jpg" alt="Recuperar contraseña" class="articulo-img">
-            <div>
-                <h3>¿Cómo recuperar tu contraseña?</h3>
-                <p>Guía para recuperar tu contraseña olvidada, explicando todos los métodos posibles.</p>
-                <p><b>NicoSchna</b> - 14/07/25</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/ArchivoBorrado.jpg" alt="Google Drive" class="articulo-img">
-            <div>
-                <h3>¿Qué hacer si se borró un archivo?</h3>
-                <p>Restaurá documentos eliminados desde Google Drive.</p>
-                <p><b>NicoSchna</b> - 01/03/19</p>
-            </div>
-        </div>
-
-
-        <div>
-            <img src="/Imagenes/Bateria.png" alt="Modo ahorro de batería" class="articulo-img">
-            <div>
-                <h3>¿Cómo usar el modo ahorro de batería?</h3>
-                <p>Extendé la duración de tu batería en pocos pasos.</p>
-                <p><b>NicoSchna</b> - 03/04/25</p>
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <section class="paginacion">
-        <section class="pagina-actual">
-          <a href='@Url.Action("Articulos", "Home")' >1</a>
-        </section>
-         <a href='@Url.Action("Articulos2", "Home")' >2</a>
-         <a href='@Url.Action("Articulos3", "Home")' >3</a>
-         <a href='@Url.Action("Articulos4", "Home")' >4</a>
-        <section class="flecha">
-          <a href="#">❯</a>
-        </section>
-         
-    </section>
-  </section>
+      </a>
+    }
+  </div>
 </main>
-
+<section class="paginacion">
+    @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
+    {
+        if (i == ViewBag.PaginaActual)
+        {
+            <section class="pagina-actual">
+                <a href="@Url.Action("Articulos","Home", new { pagina = i })">@i</a>
+            </section>
+        }
+        else
+        {
+            <a href="@Url.Action("Articulos","Home", new { pagina = i })">@i</a>
+        }
+    }
+</section>
 
 </body>
 </html>

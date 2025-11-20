@@ -1,0 +1,75 @@
+@model Eldertech.Models.Articulo
+
+<header>
+  <nav>
+    <section class="nav-left">
+      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
+      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
+      </a>
+
+
+        <section class="search-form">
+              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
+                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                 <button type="submit" >🔍</button>
+               </form>
+      </section>
+    </section>
+
+
+
+
+     <section  class="nav-links">
+    <ul>
+      <li><a href='@Url.Action("Articulos", "Home")'style="background-color: #008D36;">Articulos</a></li>
+      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+      <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
+      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+    </ul>
+    </section>
+  </nav>
+</header>
+
+<section class="container mt-4 articulo-detalle">
+
+    <img src="@Model.Foto" alt="@Model.Titulo" class="articulo-detalle-img" />
+
+    <h1 class="titulo-detalle">@Model.Titulo</h1>
+
+    @if (!string.IsNullOrWhiteSpace(Model.Subtitulo))
+    {
+        <h5 class="subtitulo-detalle text-center">@Model.Subtitulo</h5>
+    }
+
+    <p class="text-center text-muted mb-2">
+        <b>@Model.Autor</b> — @Model.Fecha.ToString("dd/MM/yyyy")
+    </p>
+
+    @{
+        string? embed = Model.Video;
+        if (!string.IsNullOrWhiteSpace(embed) && embed.Contains("watch?v="))
+        {
+            embed = embed.Replace("watch?v=", "embed/");
+        }
+    }
+
+    <div class="video-container my-4">
+        @if (!string.IsNullOrWhiteSpace(embed))
+        {
+            <iframe width="860" height="420" src="@embed" frameborder="0" allowfullscreen></iframe>
+        }
+        else
+        {
+            <div class="video-placeholder">
+                <span class="play">▶</span>
+            </div>
+        }
+    </div>
+
+    <article class="descripcion-larga">
+        @Model.Texto
+    </article>
+
+</section>

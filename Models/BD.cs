@@ -154,6 +154,56 @@ public static void AgregarMensaje(string nombreUsuario, string mensaje, string a
                 new { n = nombreUsuario }
             );
         }
+
+        // ---------------- ARTÍCULOS ----------------
+
+public static List<Articulo> ObtenerArticulos()
+{
+    using var db = ObtenerConexion();
+    string sql = "SELECT * FROM Articulo ORDER BY Fecha DESC";
+    return db.Query<Articulo>(sql).ToList();
+}
+
+public static Articulo ObtenerArticuloPorId(int id)
+{
+    using var db = ObtenerConexion();
+    string sql = "SELECT * FROM Articulo WHERE IDArticulo = @id";
+    return db.QueryFirstOrDefault<Articulo>(sql, new { id });
+}
+public static List<Articulo> TraerArticulos()
+{
+    List<Articulo> lista = new List<Articulo>();
+
+    using (SqlConnection cn = new SqlConnection(_connectionString))
+    {
+        cn.Open();
+
+        SqlCommand cmd = new SqlCommand("TraerArticulos", cn);
+        cmd.CommandType = CommandType.StoredProcedure;
+
+        SqlDataReader dr = cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            Articulo art = new Articulo
+            {
+                IDArticulo = dr.GetInt32(dr.GetOrdinal("IDArticulo")),
+                Fecha = dr.GetDateTime(dr.GetOrdinal("Fecha")),
+                Foto = dr["Foto"].ToString(),
+                Titulo = dr["Titulo"].ToString(),
+                Subtitulo = dr["Subtitulo"] as string,
+                Texto = dr["Texto"] as string,
+                Video = dr["Video"] as string,
+                Autor = dr["Autor"].ToString()
+            };
+
+            lista.Add(art);
+        }
+    }
+
+    return lista;
+}
+
+
     }
 }
     

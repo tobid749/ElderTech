@@ -73,7 +73,6 @@ private IActionResult RedirigirSegunSesion(string vistaSinSesion, string vistaCo
         public IActionResult Articulos2() => View();
         public IActionResult Articulos3() => View();
         public IActionResult Articulos4() => View();
-        public IActionResult Articulos() => View();
         public IActionResult NecesitoAyuda() => View();
         public IActionResult Contacto() => View();
 
@@ -151,23 +150,18 @@ public IActionResult Nivel(int id, int index = 0, int correctas = 0)
     if (preguntas == null || preguntas.Count == 0)
         return RedirectToAction("Camino");
 
-    // Si ya respondió todas las preguntas (6)
+    // Cuando termina todas las preguntas
     if (index >= preguntas.Count)
     {
         int estrellas = 0;
 
-        if (correctas >= 6)
-            estrellas = 3;
-        else if (correctas >= 4)
-            estrellas = 2;
-        else if (correctas >= 2)
-            estrellas = 1;
+        if (correctas >= 6) estrellas = 3;
+        else if (correctas >= 4) estrellas = 2;
+        else if (correctas >= 2) estrellas = 1;
 
-        // Guardar en BD
         int idUsuario = BD.GetUsuarioId(HttpContext.Session.GetString("UsuarioNombre"));
         BD.GuardarResultadoCamino(idUsuario, id, estrellas);
 
-        // Pantalla final
         var fin = new NivelFinalViewModel
         {
             NumeroNivel = id,
@@ -177,30 +171,34 @@ public IActionResult Nivel(int id, int index = 0, int correctas = 0)
         return View("NivelCompletado", fin);
     }
 
-    // Pregunta actual
+    // 👉 NIVEL INFO — para obtener EL NOMBRE real del nivel
+    var nivelInfo = BD.ObtenerNiveles(BD.GetUsuarioId(
+                       HttpContext.Session.GetString("UsuarioNombre")))
+                       .FirstOrDefault(n => n.IDNivel == id);
+
+    // 👉 Pregunta actual CORRECTA
     var p = preguntas[index];
 
-    // Construir ViewModel
     var vm = new NivelViewModel
     {
         NumeroNivel = id,
-        TituloApp = "WhatsApp",
+        TituloApp = nivelInfo?.NombreNivel ?? $"Nivel {id}",   // <-- NOMBRE REAL
         Pregunta = p.Enunciado,
         PorcentajeCompletado = (index * 100) / preguntas.Count,
         IndexPregunta = index,
         CorrectasHastaAhora = correctas,
-
         Opciones = new List<Opcion>
         {
-            new Opcion { Texto = p.Opcion1, EsCorrecta = (p.Correcta == 1) },
-            new Opcion { Texto = p.Opcion2, EsCorrecta = (p.Correcta == 2) },
-            new Opcion { Texto = p.Opcion3, EsCorrecta = (p.Correcta == 3) },
-            new Opcion { Texto = p.Opcion4, EsCorrecta = (p.Correcta == 4) }
+            new Opcion { Texto = p.Opcion1, EsCorrecta = p.Correcta == 1 },
+            new Opcion { Texto = p.Opcion2, EsCorrecta = p.Correcta == 2 },
+            new Opcion { Texto = p.Opcion3, EsCorrecta = p.Correcta == 3 },
+            new Opcion { Texto = p.Opcion4, EsCorrecta = p.Correcta == 4 }
         }
     };
 
     return View(vm);
 }
+
 
 
 
@@ -213,5 +211,40 @@ public IActionResult Nivel(int id, int index = 0, int correctas = 0)
 
             return RedirectToAction("Camino");
         }
+        // ---------------- ARTÍCULOS ----------------
+
+public IActionResult Articulos(int pagina = 1)
+{
+    int pageSize = 9;
+    int skip = (pagina - 1) * pageSize;
+
+    var lista = BD.TraerArticulos()
+                 .OrderByDescending(a => a.Fecha)
+                 .ToList();
+
+    int totalArticulos = lista.Count(); // ← corregido
+    int totalPaginas = (int)Math.Ceiling(totalArticulos / (double)pageSize);
+
+    var articulosPagina = lista
+        .Skip(skip)
+        .Take(pageSize)
+        .ToList();
+
+    ViewBag.PaginaActual = pagina;
+    ViewBag.TotalPaginas = totalPaginas;
+
+    return View(articulosPagina);
+}
+
+
+public IActionResult Articulo(int id)
+{
+    var art = BD.ObtenerArticuloPorId(id);
+    if (art == null)
+        return RedirectToAction("Articulos");
+
+    return View(art);
+}
+
     }
 }
