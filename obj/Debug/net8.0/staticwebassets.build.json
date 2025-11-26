@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ITkNHFJtUwMvD7pac0qtrPYnOQtyGzhEMhhKjzA6vrU=",
+  "Hash": "Johr62fkf6SY4q3b4d2iGISw8uSIwexo+OWqyLqP1rI=",
   "Source": "Eldertech",
   "BasePath": "_content/Eldertech",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Eldertech\\wwwroot",
       "Source": "Eldertech",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\css\\site.css",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\favicon.ico",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\AppStore.jfif",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\AppStore.jfif",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/AppStore.jfif",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\AppStore.jfif"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\ArchivoBorrado.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\ArchivoBorrado.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/ArchivoBorrado.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\ArchivoBorrado.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Avatar.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Avatar.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Avatar.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Avatar.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Banner.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Banner.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Banner.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Banner.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Bateria.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Bateria.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Bateria.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Bateria.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Chatgpt.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Chatgpt.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Chatgpt.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Chatgpt.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Chrome.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Chrome.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Chrome.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Chrome.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Contrasena.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Contrasena.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Contrasena.jpg",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Contrasena.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Facebook.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Facebook.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Facebook.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Facebook.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\FondoIzquierdo.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\FondoIzquierdo.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/FondoIzquierdo.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\FondoIzquierdo.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Galeria.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Galeria.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Galeria.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Galeria.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Gmail.jpeg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.jpeg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Gmail.jpeg",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Gmail.jpeg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Gmail.webp",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Gmail.webp",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Gmail.webp",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Gmail.webp"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Google.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Google.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Google.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Google.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Instagram.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Instagram.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Instagram.jpg",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Instagram.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Iphone17.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Iphone17.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Iphone17.png",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Iphone17.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Lluvia.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Lluvia.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Lluvia.jpg",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Lluvia.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Logo.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Logo.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Logo.png",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Logo.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\MP.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\MP.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/MP.png",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\MP.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Netflix.jpg",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Netflix.jpg",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Netflix.jpg",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Netflix.jpg"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\Imagenes\\Whatsapp.png",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\Imagenes\\Whatsapp.png",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "Imagenes/Whatsapp.png",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\Imagenes\\Whatsapp.png"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\js\\site.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "Eldertech",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49373638\\Downloads\\ElderTech\\wwwroot\\",
       "BasePath": "_content/Eldertech",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

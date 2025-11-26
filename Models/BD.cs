@@ -139,12 +139,13 @@ public static void AgregarMensaje(string nombreUsuario, string mensaje, string a
         }
 
         public static void GuardarResultadoCamino(int idUsuario, int nivel, int estrellas)
-        {
-            using var db = ObtenerConexion();
-            db.Execute("sp_Camino_GuardarResultado",
-                new { IDUsuario = idUsuario, IDNivel = nivel, Estrellas = estrellas },
-                commandType: CommandType.StoredProcedure);
-        }
+{
+    using var db = ObtenerConexion();
+    db.Execute("sp_Camino_GuardarResultado",
+        new { IDUsuario = idUsuario, Nivel = nivel, Estrellas = estrellas },
+        commandType: CommandType.StoredProcedure);
+}
+
 
         public static int GetUsuarioId(string nombreUsuario)
         {
