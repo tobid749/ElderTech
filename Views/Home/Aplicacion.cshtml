@@ -123,12 +123,11 @@ else
 
 
 
-<script>
 @section Scripts {
+<script>
 document.addEventListener("DOMContentLoaded", function () {
     const preguntas = document.querySelectorAll('.pregunta button[data-num]');
     if (!preguntas.length) return;
-
 
     preguntas.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -137,8 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const botones = cont.querySelectorAll('button[data-num]');
             const nextBtn = document.getElementById("btnSiguiente");
 
-
-           
             let msg = cont.querySelector('.resultado-msg');
             if (!msg) {
                 msg = document.createElement('p');
@@ -146,8 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 cont.appendChild(msg);
             }
 
-
-   
             botones.forEach(b => {
                 b.disabled = true;
                 if (b.dataset.num === correcta) {
@@ -157,8 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-
-         
             if (btn.dataset.num === correcta) {
                 msg.textContent = "¡Correcto! ✅";
                 msg.className = "resultado-msg correcto-msg";
@@ -167,11 +160,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 msg.className = "resultado-msg incorrecto-msg";
             }
 
-
             msg.style.opacity = "1";
 
-
-     
             setTimeout(() => {
                 msg.style.opacity = "0";
                 if (nextBtn) nextBtn.disabled = false;
@@ -180,4 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+}
+
 }

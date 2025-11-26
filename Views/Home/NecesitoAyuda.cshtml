@@ -8,7 +8,29 @@
 </head>
 
 
+<script>
+function enviarMail(e) {
+    e.preventDefault(); // evita que el form recargue la página
+
+
+    let tema = document.getElementById("tema").value;
+    let duda = document.getElementById("duda").value;
+
+
+    // Armamos el mailto
+    let mail = "mailto:eldertech6@gmail.com"
+             + "?subject=" + encodeURIComponent("Consulta: " + tema)
+             + "&body=" + encodeURIComponent(duda);
+
+
+    // Abrimos el correo
+    window.location.href = mail;
+}
+</script>
+
+
 <body>
+
 
 <main>
 <section class="contenedor">
@@ -16,8 +38,8 @@
   <!-- Panel izquierdo -->
   <div class="panel-izquierdo">
     <section class="btn-volver">
-    <button onclick="history.back()">←</button>
-</section>
+      <button onclick="history.back()">←</button>
+    </section>
     <section class="fondoIzquierda"></section>
   </div>
 
@@ -35,12 +57,12 @@
 
 
     <section class="formNecesitoAyuda">
-      <form>
+      <form onsubmit="enviarMail(event)">
         <label for="tema">Tema</label>
         <select id="tema" name="Tema" required>
-          <option value="tema1">Tema1</option>
-          <option value="tema2">Tema2</option>
-          <option value="otro">Otro</option>
+          <option value="Tema 1">Tema1</option>
+          <option value="Tema 2">Tema2</option>
+          <option value="Otro">Otro</option>
         </select>
 
 
@@ -54,6 +76,8 @@
   </div>
 </section>
 </main>
+
+
 <footer>
   <div>
     <small>© ElderTech</small>
@@ -64,5 +88,6 @@
 
 </body>
 </html>
+
 
 

@@ -31,6 +31,20 @@
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
     </section>
+    <div class="perfil-container">
+    <img src="@Url.Content("~/Imagenes/Perfil-Default.webp")" class="perfil-img" id="perfilBtn">
+
+    <div class="perfil-menu" id="perfilMenu">
+        <p><b>@User.FindFirst("Nombre")?.Value @User.FindFirst("Apellido")?.Value</b></p>
+        <p>@User.FindFirst("Email")?.Value</p>
+        <hr />
+        <a href="@Url.Action("Logout", "Home")">Cerrar sesión</a>
+    </div>
+</div>
+
+
+</div>
+
   </nav>
 </header>
 <section class="banner-eldertech">
@@ -170,3 +184,18 @@
 </main>
 
 </body>
+<script>
+    const btn = document.getElementById("perfilBtn");
+    const menu = document.getElementById("perfilMenu");
+
+    btn.onclick = function () {
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    };
+
+    window.onclick = function (e) {
+        if (!btn.contains(e.target) && !menu.contains(e.target)) {
+            menu.style.display = "none";
+        }
+    };
+</script>
+

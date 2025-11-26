@@ -14,6 +14,11 @@ private IActionResult RedirigirSegunSesion(string vistaSinSesion, string vistaCo
 {
     return UsuarioLogueado() ? View(vistaConSesion) : View(vistaSinSesion);
 }
+public IActionResult Logout()
+{
+    HttpContext.Session.Clear();
+    return RedirectToAction("Index");
+}
 
         public IActionResult Index() => View();
         public IActionResult IndexSesionado()
