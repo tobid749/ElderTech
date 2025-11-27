@@ -1,16 +1,4 @@
-@model IEnumerable<Eldertech.Models.ForoMensaje>
-
-
-
-
-@{
-    ViewData["Title"] = "Foro";
-}
-
-
-
-<body>
-  
+@model Eldertech.Models.Articulo
 
 <header>
   <nav>
@@ -82,55 +70,45 @@
   </nav>
 </header>
 
-<main>
-<section class="banner-eldertech">
-    <h1><span>Foro</span></h1>
-</section>
+<section class="container mt-4 articulo-detalle">
 
-<section class="foro-publicar mt-5">
-    <h4>Escribir un mensaje:</h4>
+    <img src="@Model.Foto" alt="@Model.Titulo" class="articulo-detalle-img" />
 
-    <form method="post" asp-action="PublicarMensaje">
-        <textarea name="mensaje" class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit" class="btn btn-success">Publicar</button>
-    </form>
-</section>
+    <h1 class="titulo-detalle">@Model.Titulo</h1>
 
-<hr />
+    @if (!string.IsNullOrWhiteSpace(Model.Subtitulo))
+    {
+        <h5 class="subtitulo-detalle text-center">@Model.Subtitulo</h5>
+    }
 
-<div class="foro-grid">
-@foreach (var m in Model)
-{
-    <div class="foro-card">
-        <div class="foro-perfil">
-            <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
-            <h4>@m.NombreUsuario</h4>
-            <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
-        </div>
-        <p class="foro-texto">@m.Mensaje</p>
+    <p class="text-center text-muted mb-2">
+        <b>@Model.Autor</b> — @Model.Fecha.ToString("dd/MM/yyyy")
+    </p>
+
+    @{
+        string? embed = Model.Video;
+        if (!string.IsNullOrWhiteSpace(embed) && embed.Contains("watch?v="))
+        {
+            embed = embed.Replace("watch?v=", "embed/");
+        }
+    }
+
+    <div class="video-container my-4">
+        @if (!string.IsNullOrWhiteSpace(embed))
+        {
+            <iframe width="860" height="420" src="@embed" frameborder="0" allowfullscreen></iframe>
+        }
+        else
+        {
+            <div class="video-placeholder">
+                <span class="play">▶</span>
+            </div>
+        }
     </div>
-}
-</div>
 
-@if (ViewBag.MostrarMas)
-{
-    <form method="get" asp-action="ForoSesionado">
-        <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
-        <button class="btn btn-primary mt-4">Ver más</button>
-    </form>
-}
+    <article class="descripcion-larga">
+    @Html.Raw(Model.Texto)
+</article>
 
 
-</main>
-</body>
-
-
-
-
-
-
-
-
-
-
-
+</section>

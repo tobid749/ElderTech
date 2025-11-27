@@ -2248,3 +2248,101 @@ a {
 .perfil-menu a:hover {
   text-decoration: underline;
 }
+.perfil-container {
+  position: relative;
+  margin-left: 20px;
+}
+
+.perfil-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Menú oculto */
+.perfil-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  min-width: 200px;
+  z-index: 2000;
+}
+
+/* Links sin subrayado */
+.perfil-menu a {
+  text-decoration: none;
+  color: #008D36;
+  font-weight: bold;
+}
+
+/* Subrayado SOLO en hover */
+.perfil-menu a:hover {
+  text-decoration: underline;
+}
+.perfil-container {
+  position: relative;
+  margin-left: 20px;
+}
+
+.perfil-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.perfil-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  display: none;
+  min-width: 220px;
+  z-index: 999;
+  text-align: center;
+}
+
+.perfil-menu p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.perfil-menu input {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.perfil-menu button {
+  width: 100%;
+  margin-top: 10px;
+  background: #008D36;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}

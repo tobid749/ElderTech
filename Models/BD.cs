@@ -203,6 +203,27 @@ public static List<Articulo> TraerArticulos()
 
     return lista;
 }
+public static Usuario ObtenerUsuarioPorNombre(string nombreUsuario)
+{
+    using var db = ObtenerConexion();
+    const string sql = @"SELECT IDUsuario, NombreUsuario, Mail, Password, FechaNacimiento, Foto
+                         FROM Usuarios
+                         WHERE NombreUsuario = @NombreUsuario";
+    return db.QueryFirstOrDefault<Usuario>(sql, new { NombreUsuario = nombreUsuario });
+}
+
+
+
+public static void ActualizarFotoUsuario(string nombreUsuario, string rutaFoto)
+{
+    using var con = new SqlConnection(_connectionString);
+    string sql = "UPDATE Usuarios SET Foto = @foto WHERE NombreUsuario = @n";
+    con.Execute(sql, new { foto = rutaFoto, n = nombreUsuario });
+}
+
+
+
+
 
 
     }

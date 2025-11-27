@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+DYLCznNHQEWstYzdKtJUJYFWw8SRWtoWes7wuZvGd59EacvkTfnsikfWsclDU0ozabft0OEr2bzdPxS405hQg==",
+  "dgSpecHash": "9mkD+No6rYHEHgJuY9SvMHAZD4godjyCqQHBTl5Iz1s+510pX7QIS1/NPDkoxMkIn3B0hg0zXuENMuF9eyfPiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\49373638\\Downloads\\ElderTech\\Eldertech.csproj",
+  "projectFilePath": "C:\\Users\\49373638\\Downloads\\ElderTech-1\\Eldertech.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\49373638\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\49373638\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

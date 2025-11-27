@@ -22,10 +22,14 @@ public IActionResult Logout()
 
         public IActionResult Index() => View();
         public IActionResult IndexSesionado()
-        {
-            return View("~/Views/Home/IndexSesionado.cshtml");
-            if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
-        }
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
+CargarDatosUsuario();
+    return View();
+}
+
+
 
         public IActionResult IniciarSesion()
         {
@@ -49,17 +53,23 @@ public IActionResult Logout()
             var mensajes = BD.ObtenerMensajes(0);
             ViewBag.Offset = 0;
             ViewBag.MostrarMas = mensajes.Count == 6;
+
             return View(mensajes);
         }
 
-        public IActionResult ForoSesionado(int offset = 0)
-        {
-            var mensajes = BD.ObtenerMensajes(offset);
-            ViewBag.Offset = offset;
-            ViewBag.MostrarMas = mensajes.Count == 6;
-            return View(mensajes);
-             if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
-        }
+       public IActionResult ForoSesionado(int offset = 0)
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
+
+    var mensajes = BD.ObtenerMensajes(offset);
+    ViewBag.Offset = offset;
+    ViewBag.MostrarMas = mensajes.Count == 6;
+CargarDatosUsuario();
+
+    return View(mensajes);
+}
+
 
         [HttpPost]
         public IActionResult PublicarMensaje(string mensaje)
@@ -135,18 +145,18 @@ public IActionResult Logout()
 
         // ------------------ CAMINO ------------------
     public IActionResult Camino()
-        {
-            string usuario = HttpContext.Session.GetString("UsuarioNombre");
-            if (usuario == null)
-                return RedirectToAction("IniciarSesion");
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
 
-            int idUsuario = BD.GetUsuarioId(usuario);
+    string usuario = HttpContext.Session.GetString("UsuarioNombre");
+    int idUsuario = BD.GetUsuarioId(usuario);
+    var niveles = BD.ObtenerNiveles(idUsuario);
+CargarDatosUsuario();
 
-            var niveles = BD.ObtenerNiveles(idUsuario);
+    return View(niveles);
+}
 
-            return View(niveles);
-             if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
-        }
 
 public IActionResult Nivel(int id, int index = 0, int correctas = 0)
 {
@@ -172,6 +182,7 @@ public IActionResult Nivel(int id, int index = 0, int correctas = 0)
             NumeroNivel = id,
             EstrellasObtenidas = estrellas
         };
+CargarDatosUsuario();
 
         return View("NivelCompletado", fin);
     }
@@ -250,6 +261,98 @@ public IActionResult Articulo(int id)
 
     return View(art);
 }
+// -------- ARTICULOS SOLO LOGUEADOS --------
+
+public IActionResult ArticulosSesionado(int pagina = 1)
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
+
+    int pageSize = 9;
+    int skip = (pagina - 1) * pageSize;
+
+    var lista = BD.TraerArticulos()
+                  .OrderByDescending(a => a.Fecha)
+                  .ToList();
+
+    int totalArticulos = lista.Count();
+    int totalPaginas = (int)Math.Ceiling(totalArticulos / (double)pageSize);
+
+    var articulosPagina = lista
+        .Skip(skip)
+        .Take(pageSize)
+        .ToList();
+
+    ViewBag.PaginaActual = pagina;
+    ViewBag.TotalPaginas = totalPaginas;
+CargarDatosUsuario();
+
+    return View("ArticulosSesionado", articulosPagina);
+}
+
+public IActionResult ArticuloSesionado(int id)
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
+
+    var art = BD.ObtenerArticuloPorId(id);
+    if (art == null)
+        return RedirectToAction("ArticulosSesionado");
+CargarDatosUsuario();
+
+    return View("ArticuloSesionado", art);
+}
+private void CargarDatosUsuario()
+{
+    // Usuario logueado en sesión
+    var nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
+    if (string.IsNullOrEmpty(nombreUsuario)) return;
+
+    // Lo buscamos en la BD
+    var usuario = BD.ObtenerUsuarioPorNombre(nombreUsuario);
+    if (usuario == null) return;
+
+    // Estos nombres son los que vas a usar en la vista
+    ViewBag.NombreUsuario   = usuario.NombreUsuario;
+    ViewBag.Mail            = usuario.Mail;
+    ViewBag.FechaNacimiento = usuario.FechaNacimiento.ToString("dd/MM/yyyy");
+
+    ViewBag.FotoPerfil = string.IsNullOrEmpty(usuario.Foto)
+        ? "/Imagenes/Perfil-Default.webp"
+        : usuario.Foto;
+}
+
+
+
+
+[HttpPost]
+public IActionResult CambiarFoto(IFormFile foto)
+{
+    if (foto == null || foto.Length == 0)
+        return RedirectToAction("IndexSesionado");
+
+    var nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
+
+    // Crear carpeta si no existe
+    var carpeta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Imagenes/Perfiles");
+    if (!Directory.Exists(carpeta))
+        Directory.CreateDirectory(carpeta);
+
+    var nombreArchivo = Guid.NewGuid() + Path.GetExtension(foto.FileName);
+    var rutaFisica = Path.Combine(carpeta, nombreArchivo);
+
+    // Guardar archivo
+    using (var stream = new FileStream(rutaFisica, FileMode.Create))
+        foto.CopyTo(stream);
+
+    string rutaWeb = "/Imagenes/Perfiles/" + nombreArchivo;
+
+    BD.ActualizarFotoUsuario(nombreUsuario, rutaWeb);
+
+    return RedirectToAction("IndexSesionado");
+}
+
+
 
     }
 }

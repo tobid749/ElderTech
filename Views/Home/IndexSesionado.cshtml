@@ -23,7 +23,7 @@
 
      <section  class="nav-links">
     <ul>
-      <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
+      <li><a href='@Url.Action("ArticulosSesionado", "Home")'>Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
       <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
       <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
@@ -31,17 +31,41 @@
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
     </section>
-    <div class="perfil-container">
-    <img src="@Url.Content("~/Imagenes/Perfil-Default.webp")" class="perfil-img" id="perfilBtn">
+   <div class="perfil-wrapper">
 
-    <div class="perfil-menu" id="perfilMenu">
-        <p><b>@User.FindFirst("Nombre")?.Value @User.FindFirst("Apellido")?.Value</b></p>
-        <p>@User.FindFirst("Email")?.Value</p>
+    <img src="@ViewBag.FotoPerfil" class="perfil-img" id="perfilBtn" />
+
+    <div class="menu-perfil" id="menuPerfil">
+
+        <!-- NOMBRE DE USUARIO -->
+        <p class="perfil-nombre">
+            <strong>@ViewBag.NombreUsuario</strong>
+        </p>
+
+        <!-- MAIL -->
+        <p class="perfil-mail">
+            📧 @ViewBag.Mail
+        </p>
+
+        <!-- FECHA DE NACIMIENTO -->
+        <p class="perfil-fecha">
+            📅 @ViewBag.FechaNacimiento
+        </p>
+
         <hr />
-        <a href="@Url.Action("Logout", "Home")">Cerrar sesión</a>
-    </div>
-</div>
 
+        <!-- CAMBIAR FOTO -->
+        <form asp-action="CambiarFoto" asp-controller="Home"
+              method="post" enctype="multipart/form-data">
+            <input type="file" name="foto" accept="image/*" class="perfil-file" />
+            <button type="submit" class="btn-cambiar-foto">Cambiar foto</button>
+        </form>
+
+        <!-- LOGOUT -->
+        <a href="@Url.Action("Logout","Home")" class="logout-btn">
+            Cerrar sesión
+        </a>
+    </div>
 
 </div>
 
@@ -185,17 +209,20 @@
 
 </body>
 <script>
-    const btn = document.getElementById("perfilBtn");
-    const menu = document.getElementById("perfilMenu");
+const btn = document.getElementById("perfilBtn");
+const menu = document.getElementById("menuPerfil");
 
-    btn.onclick = function () {
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    };
+btn.addEventListener("click", function (e) {
+    e.stopPropagation(); 
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
 
-    window.onclick = function (e) {
-        if (!btn.contains(e.target) && !menu.contains(e.target)) {
-            menu.style.display = "none";
-        }
-    };
+document.addEventListener("click", function (e) {
+    if (!menu.contains(e.target)) {
+        menu.style.display = "none";
+    }
+});
 </script>
+
+
 
