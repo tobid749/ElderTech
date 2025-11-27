@@ -1,136 +1,143 @@
 @model IEnumerable<Eldertech.Models.ForoMensaje>
 
-
-
-
 @{
     ViewData["Title"] = "Foro";
 }
 
-
-
 <body>
-  
-
 <header>
   <nav>
     <section class="nav-left">
       <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
-      <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
+        <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
 
-
-        <section class="search-form">
-              <form action='@Url.Action("Articulos", "Home")' method="get"  role="search">
-                 <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-                 <button type="submit" >🔍</button>
-               </form>
+      <section class="search-form">
+        <form action='@Url.Action("Articulos", "Home")' method="get" role="search">
+          <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+          <button type="submit">🔍</button>
+        </form>
       </section>
     </section>
 
-
-
-
-     <section  class="nav-links">
-    <ul>
-      <li><a href='@Url.Action("ArticulosSesionado", "Home")'>Articulos</a></li>
-      <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-      <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
-      <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
-      <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
-    </ul>
+    <section class="nav-links">
+      <ul>
+        <li><a href='@Url.Action("ArticulosSesionado", "Home")'>Artículos</a></li>
+        <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
+        <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+        <li><a href='@Url.Action("ForoSesionado", "Home")' style="background-color:#008D36;">Foro</a></li>
+        <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
+        <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
+      </ul>
     </section>
-   <div class="perfil-wrapper">
 
-    <img src="@ViewBag.FotoPerfil" class="perfil-img" id="perfilBtn" />
+    <div class="perfil-wrapper">
+        <img src="@ViewBag.FotoPerfil" class="perfil-img" id="perfilBtn" />
 
-    <div class="menu-perfil" id="menuPerfil">
-
-        <!-- NOMBRE DE USUARIO -->
-        <p class="perfil-nombre">
-            <strong>@ViewBag.NombreUsuario</strong>
-        </p>
-
-        <!-- MAIL -->
-        <p class="perfil-mail">
-            📧 @ViewBag.Mail
-        </p>
-
-        <!-- FECHA DE NACIMIENTO -->
-        <p class="perfil-fecha">
-            📅 @ViewBag.FechaNacimiento
-        </p>
-
-        <hr />
-
-        <!-- CAMBIAR FOTO -->
-        <form asp-action="CambiarFoto" asp-controller="Home"
-              method="post" enctype="multipart/form-data">
-            <input type="file" name="foto" accept="image/*" class="perfil-file" />
-            <button type="submit" class="btn-cambiar-foto">Cambiar foto</button>
-        </form>
-
-        <!-- LOGOUT -->
-        <a href="@Url.Action("Logout","Home")" class="logout-btn">
-            Cerrar sesión
-        </a>
+        <div class="menu-perfil" id="menuPerfil">
+            <p class="perfil-nombre"><strong>@ViewBag.NombreUsuario</strong></p>
+            <p class="perfil-mail">📧 @ViewBag.Mail</p>
+            <p class="perfil-fecha">📅 @ViewBag.FechaNacimiento</p>
+            <hr />
+            <form asp-action="CambiarFoto" asp-controller="Home"
+                  method="post" enctype="multipart/form-data" id="formCambiarFoto">
+                <input type="file" name="foto" accept="image/*" class="perfil-file" id="inputFoto" />
+                <button type="submit" class="btn-cambiar-foto">Cambiar foto</button>
+            </form>
+            <a href="@Url.Action("Logout","Home")" class="logout-btn">Cerrar sesión</a>
+        </div>
     </div>
-
-</div>
-
   </nav>
 </header>
 
 <main>
-<section class="banner-eldertech">
-    <h1><span>Foro</span></h1>
-</section>
+    <section class="banner-eldertech">
+        <h1><span>Foro</span></h1>
+    </section>
 
-<section class="foro-publicar mt-5">
-    <h4>Escribir un mensaje:</h4>
+    <section class="foro-publicar mt-5">
+        <h4>Escribir un mensaje:</h4>
 
-    <form method="post" asp-action="PublicarMensaje">
-        <textarea name="mensaje" class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
-        <button type="submit" class="btn btn-success">Publicar</button>
-    </form>
-</section>
+        <form method="post" asp-action="PublicarMensaje">
+            <textarea name="mensaje" class="form-control mb-3" rows="4"
+                      placeholder="Escribe tu mensaje..." required></textarea>
+            <button type="submit" class="btn btn-success">Publicar</button>
+        </form>
+    </section>
 
-<hr />
+    <hr />
 
-<div class="foro-grid">
-@foreach (var m in Model)
-{
-    <div class="foro-card">
-        <div class="foro-perfil">
-            <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
-            <h4>@m.NombreUsuario</h4>
-            <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
-        </div>
-        <p class="foro-texto">@m.Mensaje</p>
+    <div class="foro-grid">
+        @foreach (var m in Model)
+        {
+            <div class="foro-card" onclick="abrirMensaje(@m.IDMensaje)">
+                <div class="foro-perfil">
+                    <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
+                    <h4>@m.NombreUsuario</h4>
+                    <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
+                </div>
+                <p class="foro-texto">@m.Mensaje</p>
+            </div>
+        }
     </div>
-}
-</div>
 
-@if (ViewBag.MostrarMas)
-{
-    <form method="get" asp-action="ForoSesionado">
-        <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
-        <button class="btn btn-primary mt-4">Ver más</button>
-    </form>
-}
+    @if (ViewBag.MostrarMas)
+    {
+        <form method="get" asp-action="ForoSesionado">
+            <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
+            <button class="btn btn-primary mt-4">Ver más</button>
+        </form>
+    }
 
-
+    <!-- CONTENEDOR DEL MODAL -->
+    <div id="foro-modal" class="foro-modal-container" style="display:none;"></div>
 </main>
 </body>
 
+<script>
+// --- flotante perfil ---
+const btn = document.getElementById("perfilBtn");
+const menu = document.getElementById("menuPerfil");
 
+if (btn && menu) {
+    btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
 
+    document.addEventListener("click", function (e) {
+        if (!menu.contains(e.target) && e.target !== btn) {
+            menu.style.display = "none";
+        }
+    });
+}
 
+const formCambiarFoto = document.getElementById("formCambiarFoto");
+const inputFoto = document.getElementById("inputFoto");
 
+if (formCambiarFoto && inputFoto) {
+    formCambiarFoto.addEventListener("submit", function (e) {
+        if (!inputFoto.value) {
+            e.preventDefault();
+            alert("Por favor elegí una foto antes de cambiarla 🙂");
+        }
+    });
+}
 
+// --- MODAL FORO ---
+function abrirMensaje(id) {
+    fetch('@Url.Action("DetalleMensaje","Home")?id=' + id)
+        .then(r => r.text())
+        .then(html => {
+            const modal = document.getElementById("foro-modal");
+            modal.innerHTML = html;
+            modal.style.display = "flex";
+        });
+}
 
-
-
-
-
+function cerrarForoModal() {
+    const modal = document.getElementById("foro-modal");
+    modal.style.display = "none";
+    modal.innerHTML = "";
+}
+</script>

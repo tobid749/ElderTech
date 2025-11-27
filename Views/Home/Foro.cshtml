@@ -3,106 +3,121 @@
 @{
     ViewData["Title"] = "Foro";
 }
+
 <body>
-
 <header>
-  <nav>
+    <nav>
+        <!-- IZQUIERDA: LOGO + BUSCADOR -->
+        <section class="nav-left">
+            <a href='@Url.Action("Index", "Home")' aria-label="Inicio ElderTech">
+                <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
+            </a>
 
-    <!-- IZQUIERDA: LOGO + BUSCADOR -->
-    <section class="nav-left">
-      <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
-        <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
-      </a>
+            <section class="search-form">
+                <form action='@Url.Action("Articulos", "Home")' method="get" role="search">
+                    <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
+                    <button type="submit">🔍</button>
+                </form>
+            </section>
+        </section>
 
-      <section class="search-form">
-        <form action='@Url.Action("Articulos", "Home")' method="get" role="search">
-          <input type="search" name="q" placeholder="Buscar artículos" aria-label="Buscar artículos">
-          <button type="submit">🔍</button>
-        </form>
-      </section>
-    </section>
-
-    <!-- DERECHA: BOTONES -->
-    <section class="nav-links">
-      <ul>
-        <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
-        <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
-        <li><a href='@Url.Action("Foro", "Home")'>Foro</a></li>
-        <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login">Iniciar Sesión</a></li>
-        <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
-      </ul>
-    </section>
-
-  </nav>
+        <!-- DERECHA: BOTONES -->
+        <section class="nav-links">
+            <ul>
+                <li><a href='@Url.Action("Articulos", "Home")'>Artículos</a></li>
+                <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
+                <li><a href='@Url.Action("Foro", "Home")' style="background-color:#008D36;">Foro</a></li>
+                <li><a href='@Url.Action("IniciarSesion", "Home")' class="btn-login">Iniciar Sesión</a></li>
+                <li><a href='@Url.Action("Registrarse", "Home")' class="btn-register">Registrarse</a></li>
+            </ul>
+        </section>
+    </nav>
 </header>
+
 <main>
-<section class="banner-eldertech">
-    <h1><span>Foro</span></h1>
-</section>
+    <section class="banner-eldertech">
+        <h1><span>Foro</span></h1>
+    </section>
 
-<section class="foro-publicar mt-5">
-    <h4>Escribir un mensaje:</h4>
+    <!-- BLOQUE PUBLICAR (MISMO ESTILO QUE SESIONADO) -->
+    <section class="foro-publicar mt-5">
+        <h4>Escribir un mensaje:</h4>
 
-    <textarea id="mensaje" class="form-control mb-3" rows="4" placeholder="Escribe tu mensaje..."></textarea>
+        <!-- Mismo layout de formulario, pero lo frenamos por JS -->
+        <form id="form-foro-publico">
+            <textarea name="mensaje"
+                      id="mensaje"
+                      class="form-control mb-3"
+                      rows="4"
+                      placeholder="Escribe tu mensaje..."
+                      required></textarea>
 
-    <button class="btn btn-success" id="btn-publicar">Publicar</button>
+            <button type="submit" class="btn btn-success">
+                Publicar
+            </button>
+        </form>
 
-    <div id="msg-error" class="alert alert-danger mt-3" style="display:none;">
-        ❌ Debes iniciar sesión para publicar un mensaje.
-        <br />
-        <a href='@Url.Action("IniciarSesion","Home")' class="btn btn-sesion">Iniciar Sesión</a>
-    </div>
-</section>
-
-<hr />
-
-<div class="foro-grid">
-@foreach (var m in Model)
-{
-    <div class="foro-card">
-        <div class="foro-perfil">
-            <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
-            <h4>@m.NombreUsuario</h4>
-            <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
+        <div id="msg-error"
+             class="alert alert-danger mt-3"
+             style="display:none;">
+            ❌ Debes iniciar sesión para publicar un mensaje.
+            <br />
+            <a href='@Url.Action("IniciarSesion","Home")' class="btn btn-sesion">
+                Iniciar Sesión
+            </a>
         </div>
-        <p class="foro-texto">@m.Mensaje</p>
-    </div>
-}
-</div>
+    </section>
 
-@if (ViewBag.MostrarMas)
-{
-    <form method="get" asp-action="Foro">
-        <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
-        <button class="btn btn-primary mt-4">Ver más</button>
-    </form>
-}
-</main>
+    <hr />
 
-</body>
-@section Scripts {
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const btn = document.getElementById("btn-publicar");
-        const error = document.getElementById("msg-error");
-
-        if (btn) {
-            btn.addEventListener("click", function (e) {
-
-                e.preventDefault(); // ❌ No envía al servidor
-
-                error.style.display = "block"; // ✅ Muestra el mensaje
-
-                // Animación suave
-                error.style.opacity = 0;
-                setTimeout(() => { error.style.transition = "0.4s"; error.style.opacity = 1; }, 10);
-
-                // Baja scroll
-                window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-            });
+    <!-- TARJETAS DEL FORO: MISMAS QUE EN FOROSESIONADO PERO SIN CLICK -->
+    <div class="foro-grid">
+        @foreach (var m in Model)
+        {
+            <div class="foro-card">
+                <div class="foro-perfil">
+                    <img src="@m.Avatar" alt="Avatar @m.NombreUsuario" class="foro-avatar">
+                    <h4>@m.NombreUsuario</h4>
+                    <p>@m.Fecha.ToString("dd/MM/yyyy • HH:mm")</p>
+                </div>
+                <p class="foro-texto">@m.Mensaje</p>
+            </div>
         }
-    });
-</script>
+    </div>
 
+    @if (ViewBag.MostrarMas)
+    {
+        <form method="get" asp-action="Foro">
+            <input type="hidden" name="offset" value="@(ViewBag.Offset + 6)" />
+            <button class="btn btn-primary mt-4">Ver más</button>
+        </form>
+    }
+</main>
+</body>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form  = document.getElementById("form-foro-publico");
+            const error = document.getElementById("msg-error");
+
+            if (form && error) {
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault(); // 👉 no se manda al servidor
+
+                    error.style.display = "block";
+
+                    // animación suave
+                    error.style.opacity = 0;
+                    setTimeout(() => {
+                        error.style.transition = "0.4s";
+                        error.style.opacity = 1;
+                    }, 10);
+
+                    // baja un poco el scroll para que se vea
+                    error.scrollIntoView({ behavior: "smooth", block: "center" });
+                });
+            }
+        });
+    </script>
 }

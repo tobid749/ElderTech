@@ -2346,3 +2346,603 @@ a {
 .logout-btn:hover {
   text-decoration: underline;
 }
+.perfil-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.perfil-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* FLOTANTE */
+.menu-perfil {
+  position: absolute;
+  top: 60px;
+  right: -40px;             /* 👉 extendido a la derecha */
+  width: 310px;             /* 👉 más grande */
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;      /* 👉 borde redondo */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* 👉 sombra */
+  display: none;
+  z-index: 999;
+}
+
+/* FOTO GRANDE DEL MENÚ */
+.perfil-img-grande {
+  display: block;
+  margin: 0 auto 12px auto;
+  width: 120px;     /* 👉 tamaño fijo */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+/* TEXTO */
+.perfil-nombre,
+.perfil-mail,
+.perfil-fecha {
+  text-align: center;
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+.perfil-mail { opacity: 0.85; }
+.perfil-fecha { opacity: 0.85; }
+
+/* CAMBIAR FOTO */
+.perfil-file {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.btn-cambiar-foto {
+  display: block;
+  margin: 0 auto; /* 👉 CENTRADO */
+  background: #3085d6;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: #c00;
+}
+.perfil-img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  /* 💥 ACÁ ESTÁ EL BORDE NEGRO */
+  border: 1px solid black;
+
+  cursor: pointer;
+}
+.foro-modal-container {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.foro-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.foro-modal-box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.foro-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.foro-modal-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.foro-avatar-grande {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.foro-avatar-chico {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.foro-mensaje-principal {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.foro-respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foro-respuesta {
+  display: flex;
+  gap: 8px;
+}
+
+.foro-respuesta-autor {
+  font-size: 13px;
+  color: #555;
+}
+
+.foro-modal-container {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.foro-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.foro-modal-box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 650px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.foro-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.foro-modal-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.foro-avatar-grande {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.foro-avatar-chico {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.foro-respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foro-respuesta {
+  display: flex;
+  gap: 8px;
+}
+
+/* ============================================
+   POP‑UP DEL FORO (DETALLE DE MENSAJE)
+   ESTILO COMPLETO ELDERTECH
+=============================================== */
+
+.foro-modal-container {
+  position: fixed;
+  inset: 0;
+  display: none;                /* Oculto hasta abrirlo */
+  align-items: center;
+  justify-content: center;
+  z-index: 4000;                /* Por encima de todo */
+}
+
+.foro-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* Fondo oscuro */
+  backdrop-filter: blur(3px);   /* efecto sutil */
+}
+
+/* Caja principal */
+.foro-modal-box {
+  position: relative;
+  background: #ffffff;
+  width: 90%;
+  max-width: 650px;             /* Más grande (lo pediste) */
+  max-height: 80vh;
+  overflow-y: auto;
+
+  padding: 25px;
+  border-radius: 20px;
+
+  /* Sombra estilo ElderTech */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25),
+              0 0 0 3px rgba(0,141,54,0.12);
+
+  border: 1px solid #dcdcdc;    /* Borde suave */
+}
+
+/* Botón cerrar */
+.foro-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1A3153;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.foro-modal-close:hover {
+  color: #008D36;
+}
+
+/* HEADER con avatar y nombre */
+.foro-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.foro-avatar-grande {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #1A3153; /* borde azul oscuro */
+}
+
+/* Texto del mensaje */
+.foro-mensaje-principal {
+  font-size: 17px;
+  font-family: 'Creato Display';
+  color: #0e1b2b;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* SECCIÓN RESPUESTAS */
+.foro-respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Cada respuesta */
+.foro-respuesta {
+  display: flex;
+  gap: 10px;
+  background: #f7f9fb;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.foro-avatar-chico {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #1A3153;
+}
+
+.foro-respuesta-contenido {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.foro-respuesta-autor {
+  font-size: 14px;
+  font-weight: bold;
+  color: #133A60;
+  margin-bottom: 2px;
+}
+
+.foro-respuesta-texto {
+  font-size: 15px;
+  color: #1A3153;
+  line-height: 1.45;
+}
+
+/* FORMULARIO RESPUESTA */
+.foro-responder {
+  margin-top: 18px;
+}
+
+.foro-responder textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+  padding: 12px;
+  font-size: 15px;
+  resize: none;
+  min-height: 70px;
+
+  font-family: 'Creato Display';
+}
+
+.foro-responder button {
+  margin-top: 10px;
+  width: 160px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #008D36;    /* verde ElderTech */
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,141,54,0.25);
+  transition: 0.2s;
+}
+
+.foro-responder button:hover {
+  background: #006B28;
+  transform: translateY(-2px);
+}
+/* ----- STICKY RESPONDER EN EL MODAL ----- */
+.foro-responder-sticky {
+  position: sticky;
+  bottom: 0;
+  background: #ffffff;
+  padding: 15px 0 10px;
+  margin-top: 15px;
+  border-top: 2px solid #e6e6e6;
+  z-index: 50;
+}
+
+/* textarea */
+.foro-responder-sticky .foro-textarea {
+  width: 100%;
+  min-height: 90px;
+  border: 1px solid #dcdcdc;
+  border-radius: 14px;
+  padding: 12px;
+  outline: none;
+  resize: none;
+  font-size: 15px;
+  font-family: 'Creato Display';
+}
+
+.foro-responder-sticky .foro-textarea:focus {
+  border-color: #3CAA36;
+  box-shadow: 0 0 0 3px rgba(0, 141, 54, .15);
+}
+
+/* botón */
+.foro-btn-responder {
+  margin-top: 12px;
+  background: #008D36;
+  color: white;
+  font-weight: 600;
+  padding: 12px 35px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.foro-btn-responder:hover {
+  background: #006b2a;
+  transform: translateY(-2px);
+}
+/* Contenedor del modal */
+.foro-modal-box {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 0 0 0;  /* 👈 sacamos padding abajo para que no empuje */
+  max-width: 650px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor del contenido (scroll) */
+.foro-modal-content {
+  flex: 1;
+  padding: 0 20px 20px 20px;
+}
+
+/* 🟢 ZONA DE RESPUESTA STICKY */
+.foro-modal-responder {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 18px 20px 25px 20px;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.08);
+  z-index: 50;
+}
+
+/* Textarea */
+.foro-modal-responder textarea {
+  width: 100%;
+  resize: none;
+  border-radius: 12px;
+  height: 95px;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
+/* Botón responder */
+.foro-modal-responder button {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  background: #008D36;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 141, 54, .25);
+}
+
+.foro-modal-responder button:hover {
+  background: #006B28;
+}
+/* Caja del modal */
+.foro-modal-box {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px 32px;   /* 💥 AGREGADO: más padding lateral */
+  max-width: 650px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Header */
+.foro-modal-header {
+  display: flex;
+  gap: 15px;            /* Más espacio entre avatar y texto */
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Mensaje principal */
+.foro-mensaje-principal {
+  margin: 10px 0 20px;
+}
+
+/* Contenedor de respuestas */
+.foro-respuestas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Cada respuesta */
+.foro-respuesta {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;           /* 💥 Margen interno */
+  background: #f8f8f8;
+  border-radius: 12px;          /* 💥 Más redondeado */
+  border: 1px solid #e3e3e3;    /* 💥 Hace que se vea más limpia */
+}
+
+/* Avatar en respuesta */
+.foro-avatar-chico {
+  width: 36px;
+  height: 36px;
+}
+
+/* Zona sticky inferior */
+.foro-responder-sticky {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  padding: 18px 5px;            /* 💥 Espaciado más uniforme */
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Textarea */
+.foro-textarea {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+/* Botón Responder */
+.foro-btn-responder {
+  display: block;
+  margin: 18px auto 0 auto;
+  background: #008D36;
+  border: none;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: .2s;
+}
+
+.foro-btn-responder:hover {
+  background: #006b2b;
+  transform: scale(1.04);
+}

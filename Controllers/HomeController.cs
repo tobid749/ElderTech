@@ -72,16 +72,25 @@ CargarDatosUsuario();
 
 
         [HttpPost]
-        public IActionResult PublicarMensaje(string mensaje)
-        {
-            if (string.IsNullOrEmpty(HttpContext.Session.GetString("UsuarioNombre")))
-                return RedirectToAction("IniciarSesion", "Home");
+      [HttpPost]
+public IActionResult PublicarMensaje(string mensaje)
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
 
-            string usuario = HttpContext.Session.GetString("UsuarioNombre");
-            BD.AgregarMensaje(usuario, mensaje, "/Imagenes/AvatarDefault.png");
+    string nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
 
-            return RedirectToAction("ForoSesionado");
-        }
+    // Traemos al usuario con su foto (o default)
+    var usuario = BD.ObtenerUsuarioPorNombre(nombreUsuario);
+
+    string avatar = usuario.Foto; // siempre tiene algo válido por el paso 2
+
+    // Guardamos el mensaje con esa foto
+    BD.AgregarMensaje(nombreUsuario, mensaje, avatar);
+
+    return RedirectToAction("ForoSesionado");
+}
+
 
         // ------------------ ARTÍCULOS / PÁGINAS ------------------
         public IActionResult Mail() => View();
@@ -95,7 +104,7 @@ CargarDatosUsuario();
         public IActionResult Aplicaciones()
 {
     if (!UsuarioLogueado()) return RedirectToAction("IniciarSesion");
-
+CargarDatosUsuario();
     var apps = BD.ObtenerAplicaciones();
     return View(apps);
 }
@@ -133,7 +142,7 @@ CargarDatosUsuario();
             ViewBag.OpcionesMezcladas = opciones;
             ViewBag.NextIndex = pos + 1;
             ViewBag.TotalPreguntas = preguntas.Count;
-
+CargarDatosUsuario();
             return View(app);
         }
 
@@ -304,28 +313,25 @@ CargarDatosUsuario();
 }
 private void CargarDatosUsuario()
 {
-    // Usuario logueado en sesión
     var nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
     if (string.IsNullOrEmpty(nombreUsuario)) return;
 
-    // Lo buscamos en la BD
     var usuario = BD.ObtenerUsuarioPorNombre(nombreUsuario);
     if (usuario == null) return;
 
-    // Estos nombres son los que vas a usar en la vista
-    ViewBag.NombreUsuario   = usuario.NombreUsuario;
-    ViewBag.Mail            = usuario.Mail;
-    ViewBag.FechaNacimiento = usuario.FechaNacimiento.ToString("dd/MM/yyyy");
-
-    ViewBag.FotoPerfil = string.IsNullOrEmpty(usuario.Foto)
-        ? "/Imagenes/Perfil-Default.webp"
-        : usuario.Foto;
+    ViewBag.NombreUsuario    = usuario.NombreUsuario;
+    ViewBag.Mail             = usuario.Mail;
+    ViewBag.FechaNacimiento  = usuario.FechaNacimiento.ToString("dd/MM/yyyy");
+    ViewBag.FotoPerfil       = usuario.Foto; // 👉 ya viene con default si estaba vacía
 }
 
 
 
 
+
+
 [HttpPost]
+
 public IActionResult CambiarFoto(IFormFile foto)
 {
     if (foto == null || foto.Length == 0)
@@ -333,7 +339,6 @@ public IActionResult CambiarFoto(IFormFile foto)
 
     var nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
 
-    // Crear carpeta si no existe
     var carpeta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Imagenes/Perfiles");
     if (!Directory.Exists(carpeta))
         Directory.CreateDirectory(carpeta);
@@ -341,7 +346,6 @@ public IActionResult CambiarFoto(IFormFile foto)
     var nombreArchivo = Guid.NewGuid() + Path.GetExtension(foto.FileName);
     var rutaFisica = Path.Combine(carpeta, nombreArchivo);
 
-    // Guardar archivo
     using (var stream = new FileStream(rutaFisica, FileMode.Create))
         foto.CopyTo(stream);
 
@@ -350,6 +354,48 @@ public IActionResult CambiarFoto(IFormFile foto)
     BD.ActualizarFotoUsuario(nombreUsuario, rutaWeb);
 
     return RedirectToAction("IndexSesionado");
+}
+
+public IActionResult DetalleMensaje(int id)
+{
+    if (!UsuarioLogueado())
+        return Unauthorized();
+
+    var mensaje = BD.ObtenerMensajePorId(id);
+    if (mensaje == null)
+        return NotFound();
+
+    var respuestas = BD.ObtenerRespuestas(id);
+
+    var vm = new ForoMensajeDetalleViewModel
+    {
+        Mensaje = mensaje,
+        Respuestas = respuestas
+    };
+
+    return PartialView("_ForoDetalle", vm);
+}
+
+[HttpPost]
+public IActionResult ResponderMensaje(int idMensaje, string texto)
+{
+    if (!UsuarioLogueado())
+        return RedirectToAction("IniciarSesion");
+
+    if (string.IsNullOrWhiteSpace(texto))
+        return RedirectToAction("ForoSesionado");
+
+    string nombreUsuario = HttpContext.Session.GetString("UsuarioNombre");
+    var usuario = BD.ObtenerUsuarioPorNombre(nombreUsuario);
+
+    string avatar = string.IsNullOrWhiteSpace(usuario?.Foto)
+        ? "/Imagenes/Perfil-Default.webp"
+        : usuario.Foto;
+
+    BD.AgregarRespuesta(idMensaje, nombreUsuario, texto, avatar);
+
+    // Después de responder volvés al foro (la próxima vez que abras el modal ya trae la respuesta nueva)
+    return RedirectToAction("ForoSesionado");
 }
 
 

@@ -1,0 +1,70 @@
+@model Eldertech.Models.ForoMensajeDetalleViewModel
+
+<div class="foro-modal-backdrop" onclick="cerrarForoModal()"></div>
+
+<div class="foro-modal-box" onclick="event.stopPropagation()">
+
+    <button class="foro-modal-close" onclick="cerrarForoModal()">✕</button>
+
+    <!-- HEADER DEL MENSAJE -->
+    <div class="foro-modal-header">
+        <img src="@Model.Mensaje.Avatar" class="foro-avatar-grande" />
+        <div>
+            <h3>@Model.Mensaje.NombreUsuario</h3>
+            <p class="foro-fecha">
+                @Model.Mensaje.Fecha.ToString("dd/MM/yyyy • HH:mm")
+            </p>
+        </div>
+    </div>
+
+    <!-- MENSAJE PRINCIPAL -->
+    <p class="foro-mensaje-principal">@Model.Mensaje.Mensaje</p>
+
+    <hr />
+
+    <!-- RESPUESTAS -->
+    <h4>Respuestas</h4>
+
+    <div class="foro-respuestas">
+        @if (Model.Respuestas != null && Model.Respuestas.Any())
+        {
+            foreach (var r in Model.Respuestas)
+            {
+                <div class="foro-respuesta">
+                    <img src="@r.Avatar" class="foro-avatar-chico" />
+                    <div>
+                        <p class="foro-respuesta-autor">
+                            <b>@r.NombreUsuario</b> · @r.Fecha.ToString("dd/MM/yyyy HH:mm")
+                        </p>
+                        <p>@r.Mensaje</p>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Aún no hay respuestas. ¡Sé el primero en responder!</p>
+        }
+    </div>
+
+    <hr />
+
+    <!-- ============================
+         RESPONDER (STICKY)
+    ============================= -->
+    <div class="foro-responder-sticky">
+        <h4>Responder</h4>
+
+        <form asp-action="ResponderMensaje" asp-controller="Home" method="post">
+            <input type="hidden" name="idMensaje" value="@Model.Mensaje.IDMensaje" />
+
+            <textarea name="texto" rows="3" class="foro-textarea"
+                      placeholder="Escribí tu respuesta..." required></textarea>
+
+            <button type="submit" class="foro-btn-responder">
+                Responder
+            </button>
+        </form>
+    </div>
+
+</div>

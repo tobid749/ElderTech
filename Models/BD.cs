@@ -105,7 +105,14 @@ public static List<ForoMensaje> ObtenerMensajes(int offset = 0)
     return db.Query<ForoMensaje>("sp_ObtenerMensajes", new { Offset = offset },
         commandType: CommandType.StoredProcedure).ToList();
 }
-
+public static ForoMensaje ObtenerMensajePorId(int idMensaje)
+{
+    using var db = ObtenerConexion();
+    const string sql = @"SELECT IDMensaje, NombreUsuario, Mensaje, Fecha, Avatar
+                         FROM ForoMensajes
+                         WHERE IDMensaje = @id";
+    return db.QueryFirstOrDefault<ForoMensaje>(sql, new { id = idMensaje });
+}
 public static void AgregarMensaje(string nombreUsuario, string mensaje, string avatar)
 {
     using var db = ObtenerConexion();
@@ -113,8 +120,24 @@ public static void AgregarMensaje(string nombreUsuario, string mensaje, string a
     {
         NombreUsuario = nombreUsuario,
         Mensaje = mensaje,
-        Avatar = avatar ?? "/Imagenes/default-avatar.png"
+        Avatar = avatar
     }, commandType: CommandType.StoredProcedure);
+}
+public static List<ForoRespuesta> ObtenerRespuestas(int idMensaje)
+{
+    using var db = ObtenerConexion();
+    const string sql = @"SELECT IDRespuesta, IDMensaje, NombreUsuario, Mensaje, Fecha, Avatar
+                         FROM ForoRespuestas
+                         WHERE IDMensaje = @id
+                         ORDER BY Fecha ASC";
+    return db.Query<ForoRespuesta>(sql, new { id = idMensaje }).ToList();
+}
+public static void AgregarRespuesta(int idMensaje, string nombreUsuario, string mensaje, string avatar)
+{
+    using var db = ObtenerConexion();
+    const string sql = @"INSERT INTO ForoRespuestas (IDMensaje, NombreUsuario, Mensaje, Avatar)
+                         VALUES (@idMensaje, @nombreUsuario, @mensaje, @avatar)";
+    db.Execute(sql, new { idMensaje, nombreUsuario, mensaje, avatar });
 }
  // ---------------- CAMINO --------------------
 
@@ -209,8 +232,24 @@ public static Usuario ObtenerUsuarioPorNombre(string nombreUsuario)
     const string sql = @"SELECT IDUsuario, NombreUsuario, Mail, Password, FechaNacimiento, Foto
                          FROM Usuarios
                          WHERE NombreUsuario = @NombreUsuario";
-    return db.QueryFirstOrDefault<Usuario>(sql, new { NombreUsuario = nombreUsuario });
+
+    var u = db.QueryFirstOrDefault<Usuario>(sql, new { NombreUsuario = nombreUsuario });
+
+    if (u != null)
+    {
+        // 👉 Si no tiene foto en la BD, le ponemos la default
+        if (string.IsNullOrWhiteSpace(u.Foto))
+            u.Foto = "/Imagenes/Perfiles/Perfil-Default.webp";
+
+        // (opcional) Si en la BD guardaste solo el nombre de archivo, lo completás acá
+        // if (!u.Foto.StartsWith("/Imagenes/"))
+        //     u.Foto = "/Imagenes/Perfiles/" + u.Foto;
+    }
+
+    return u;
 }
+
+
 
 
 
@@ -220,6 +259,7 @@ public static void ActualizarFotoUsuario(string nombreUsuario, string rutaFoto)
     string sql = "UPDATE Usuarios SET Foto = @foto WHERE NombreUsuario = @n";
     con.Execute(sql, new { foto = rutaFoto, n = nombreUsuario });
 }
+
 
 
 

@@ -9,103 +9,107 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Eldertech
 build_property.RootNamespace = Eldertech
-build_property.ProjectDir = C:\Users\49373638\Downloads\ElderTech-1\
+build_property.ProjectDir = C:\Users\49373638\Downloads\ElderTech\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\49373638\Downloads\ElderTech-1
+build_property.MSBuildProjectDirectory = C:\Users\49373638\Downloads\ElderTech
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Auth/IniciarSesion.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Auth/IniciarSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxJbmljaWFyU2VzaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Auth/Registrarse.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Auth/Registrarse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3RyYXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Aplicacion.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Aplicacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcGxpY2FjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Aplicaciones.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Aplicaciones.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcGxpY2FjaW9uZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Articulo.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Articulo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Articulos.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Articulos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/ArticuloSesionado.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/ArticuloSesionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsb1Nlc2lvbmFkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/ArticulosSesionado.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/ArticulosSesionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY3Vsb3NTZXNpb25hZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Camino.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Camino.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYW1pbm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Contacto.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Contacto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Foro.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Foro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/ForoSesionado.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/ForoSesionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JvU2VzaW9uYWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Index.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/IndexSesionado.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/IndexSesionado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleFNlc2lvbmFkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Mail.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Mail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/NecesitoAyuda.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/NecesitoAyuda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZWNlc2l0b0F5dWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/Nivel.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/Nivel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOaXZlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/NivelCompletado.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/NivelCompletado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOaXZlbENvbXBsZXRhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Home/RecuperarContraseña.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/RecuperarContraseña.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWN1cGVyYXJDb250cmFzZcOxYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Shared/_Layout.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Home/_ForoDetalle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfRm9yb0RldGFsbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49373638/Downloads/ElderTech/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/_ViewImports.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49373638/Downloads/ElderTech-1/Views/_ViewStart.cshtml]
+[C:/Users/49373638/Downloads/ElderTech/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -7,7 +7,7 @@
 <body>
 <header>
   <nav>
-     <section class="nav-left">
+    <section class="nav-left">
       <a href='@Url.Action("IndexSesionado", "Home")' aria-label="Inicio ElderTech">
       <img src="/Imagenes/Logo.png" alt="Logo ElderTech">
       </a>
@@ -26,19 +26,54 @@
 
      <section  class="nav-links">
     <ul>
-        <section class="fondo-verde">
-            <li><a href='@Url.Action("Articulos", "Home")'>Articulos</a></li>
-       </section>
+      <li><a href='@Url.Action("ArticulosSesionado", "Home")'>Articulos</a></li>
       <li><a href='@Url.Action("Camino", "Home")'>Camino</a></li>
-      <li><a href='@Url.Action("Aplicaciones", "Home")'style="background-color: #008D36;">Aplicaciones</a></li>
+      <li><a href='@Url.Action("Aplicaciones", "Home")'>Aplicaciones</a></li>
       <li><a href='@Url.Action("ForoSesionado", "Home")'>Foro</a></li>
       <li><a href='@Url.Action("Contacto", "Home")'>Contacto</a></li>
       <li><a href='@Url.Action("NecesitoAyuda", "Home")'>Necesito Ayuda</a></li>
     </ul>
     </section>
+   <div class="perfil-wrapper">
+
+    <img src="@ViewBag.FotoPerfil" class="perfil-img" id="perfilBtn" />
+
+    <div class="menu-perfil" id="menuPerfil">
+
+        <!-- NOMBRE DE USUARIO -->
+        <p class="perfil-nombre">
+            <strong>@ViewBag.NombreUsuario</strong>
+        </p>
+
+        <!-- MAIL -->
+        <p class="perfil-mail">
+            📧 @ViewBag.Mail
+        </p>
+
+        <!-- FECHA DE NACIMIENTO -->
+        <p class="perfil-fecha">
+            📅 @ViewBag.FechaNacimiento
+        </p>
+
+        <hr />
+
+        <!-- CAMBIAR FOTO -->
+        <form asp-action="CambiarFoto" asp-controller="Home"
+              method="post" enctype="multipart/form-data">
+            <input type="file" name="foto" accept="image/*" class="perfil-file" />
+            <button type="submit" class="btn-cambiar-foto">Cambiar foto</button>
+        </form>
+
+        <!-- LOGOUT -->
+        <a href="@Url.Action("Logout","Home")" class="logout-btn">
+            Cerrar sesión
+        </a>
+    </div>
+
+</div>
+
   </nav>
 </header>
-
 
 
 
@@ -66,3 +101,32 @@
 </section>
 </main>
 </body>
+
+<script>
+const btn = document.getElementById("perfilBtn");
+const menu = document.getElementById("menuPerfil");
+
+btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", function (e) {
+    if (!menu.contains(e.target) && e.target !== btn) {
+        menu.style.display = "none";
+    }
+});
+
+// VALIDAR CAMBIO DE FOTO
+const formCambiarFoto = document.getElementById("formCambiarFoto");
+const inputFoto = document.getElementById("inputFoto");
+
+if (formCambiarFoto && inputFoto) {
+    formCambiarFoto.addEventListener("submit", function (e) {
+        if (!inputFoto.value) {
+            e.preventDefault();
+            alert("Por favor elegí una foto antes de cambiarla 🙂");
+        }
+    });
+}
+</script>

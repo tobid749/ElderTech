@@ -80,7 +80,6 @@
   </nav>
 </header>
 
-
 <section class="banner-eldertech">
     <h1><span>Artículos</span></h1>
 </section>
@@ -124,3 +123,31 @@
 
 </body>
 </html>
+<script>
+const btn = document.getElementById("perfilBtn");
+const menu = document.getElementById("menuPerfil");
+
+btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", function (e) {
+    if (!menu.contains(e.target) && e.target !== btn) {
+        menu.style.display = "none";
+    }
+});
+
+// VALIDAR CAMBIO DE FOTO
+const formCambiarFoto = document.getElementById("formCambiarFoto");
+const inputFoto = document.getElementById("inputFoto");
+
+if (formCambiarFoto && inputFoto) {
+    formCambiarFoto.addEventListener("submit", function (e) {
+        if (!inputFoto.value) {
+            e.preventDefault();
+            alert("Por favor elegí una foto antes de cambiarla 🙂");
+        }
+    });
+}
+</script>
