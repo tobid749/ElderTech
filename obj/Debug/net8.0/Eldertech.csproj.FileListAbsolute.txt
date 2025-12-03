@@ -43,11 +43,6 @@ C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\Eldertech.RazorAssemblyIn
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\Eldertech.RazorAssemblyInfo.cs
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets\msbuild.Eldertech.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets\msbuild.build.Eldertech.props
-C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Eldertech.props
-C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Eldertech.props
-C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\scopedcss\bundle\Eldertech.styles.css
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\Eldertech.dll
 C:\Users\49373638\Downloads\Eldertech\obj\Debug\net8.0\refint\Eldertech.dll
@@ -158,7 +153,6 @@ C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.IdentityModel.Toke
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\cs\Microsoft.Data.SqlClient.resources.dll
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
 C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
@@ -350,3 +344,10 @@ C:\Users\49373638\Downloads\ElderTech\ElderTech\obj\Debug\net8.0\refint\Eldertec
 C:\Users\49373638\Downloads\ElderTech\ElderTech\obj\Debug\net8.0\Eldertech.pdb
 C:\Users\49373638\Downloads\ElderTech\ElderTech\obj\Debug\net8.0\Eldertech.genruntimeconfig.cache
 C:\Users\49373638\Downloads\ElderTech\ElderTech\obj\Debug\net8.0\ref\Eldertech.dll
+C:\Users\49373638\Downloads\ElderTech\bin\Debug\net8.0\Eldertech.staticwebassets.endpoints.json
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\49373638\Downloads\ElderTech\obj\Debug\net8.0\staticwebassets.build.endpoints.json
